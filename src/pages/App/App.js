@@ -7,7 +7,7 @@ import { getUser, logout } from "../../services/authService"
 
 import Nav from "../../components/Nav/Nav"
 import Main from "../../components/Main"
-import styleModule from "../../components/styleModal"
+import StyleModal from "../../components/styleModal"
 import appStyles from "./appStyles.module.css"
 import { SketchPicker } from "react-color"
 import pickerStyles from "../../components/pickerStyles.module.css"
@@ -69,7 +69,7 @@ function App() {
 								<div className={pickerStyles.style__container}>
 								<SketchPicker color={color} onChange={c =>
         setColor("#" + rgbHex(c.rgb.r, c.rgb.g, c.rgb.b, c.rgb.a))} />
-									<styleModule pickedColor={color}/>
+									<StyleModal pickedColor={color}/>
 							</div>
 							</>
 						</div>

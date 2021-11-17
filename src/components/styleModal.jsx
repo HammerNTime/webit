@@ -5,7 +5,7 @@ import modalStyles from "./modalStyles.module.css"
 import Modal from "react-modal"
 import styled from 'styled-components'
 
-function ColorPicker({pickedColor}) {
+function StyleModal({pickedColor}) {
     
     const [modalIsOpen, setModalIsOpen] = useState(false)
    
@@ -220,4 +220,4 @@ function ColorPicker({pickedColor}) {
     )
 }
 
-export default ColorPicker
+export default StyleModal
