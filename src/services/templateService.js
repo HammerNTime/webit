@@ -24,7 +24,36 @@ export const createTemplate = async (template) => {
 }
 export const getTemplateById = async (id) => {
 	try {
-			const res = await fetch(`${BASE_URL}/details/${id}`, { mode: 'cors' })
+			const res = await fetch(`${BASE_URL}/${id}`, { mode: 'cors' })
+			const data = await res.json()
+			return data
+	} catch (error) {
+			throw error
+	}
+}
+export const getTemplateByUser = async (id) => {
+	try {
+			const res = await fetch(`${BASE_URL}/user/${id}`, { mode: 'cors' })
+			const data = await res.json()
+			return data
+	} catch (error) {
+			throw error
+	}
+}
+export const deleteTemplate = async (postId) => {
+	try {
+			await fetch(`${BASE_URL}/${postId}`, {
+					method: 'DELETE',
+					headers: { 'Authorization': 'Bearer ' + tokenService.getToken() }
+			}, { mode: 'cors' })
+	} catch (error) {
+			throw error
+	}
+}
+
+export const getAllTemplates = async () => {
+	try {
+			const res = await fetch(`${BASE_URL}/all`, { mode: 'cors' })
 			const data = await res.json()
 			return data
 	} catch (error) {
