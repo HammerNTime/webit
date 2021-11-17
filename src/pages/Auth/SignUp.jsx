@@ -4,7 +4,7 @@ import './Auth.css'
 
 // Assets
 import cat from '../../assets/avatars/cat.png' //<= included in starter code
-import coder from '../../assets/animation/coder.json'
+import design from "../../assets/animation/design.json"
 
 // Services
 import { signup } from '../../services/authService'
@@ -72,7 +72,7 @@ const SignUp = (props) => {
                         <h1>Create an Account</h1>
                         {authError
                             ? <h3>{authError}</h3>
-                            : <h3>Social media for developers</h3>
+                            : <h3>Color your website!</h3>
                         }
                     </div>
                     <form className="register-form" onSubmit={handleSubmit}>
@@ -132,7 +132,10 @@ const SignUp = (props) => {
             </div>
 
             <div className="right-container">
-                <Animation animData={coder}/>
+                <div className="lottie">
+
+                <Animation animData={design}/>
+                </div>
             </div>
 
         </div>

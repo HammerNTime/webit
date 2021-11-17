@@ -3,7 +3,8 @@ import { useNavigate, Link } from 'react-router-dom'
 import './Auth.css'
 
 // Assets
-import coder from '../../assets/animation/coder.json'
+import design from "../../assets/animation/design.json"
+
 
 // Services
 import { login } from '../../services/authService' // update import
@@ -91,7 +92,10 @@ const SignIn = (props) => {
             </div>
 
             <div className="right-container">
-                <Animation animData={coder}></Animation>
+                <div className="lottie">
+
+                <Animation animData={design}/>
+                </div>
             </div>
 
         </div>

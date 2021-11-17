@@ -52,7 +52,6 @@ function App() {
 
 	return (
 		<div className="App">
-			&lt;p&gt;working&lt;/p&gt;
 			<Nav handleLogout={handleLogout} />
 			<Routes>
 				<Route
@@ -60,8 +59,11 @@ function App() {
 					path="/"
 					element={
 						<div className={appStyles.main__container}>
+							<>
 							<Main />
-							<ColorPicker />
+								<ColorPicker />
+								
+							</>
 						</div>
 					}
 				/>
