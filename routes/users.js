@@ -6,7 +6,7 @@ const router = Router()
 
 // ========= Public Routes ========= 
 
-router.get('/all-users', usersCtrl.getAllUsers)
+router.get('/all-users', usersCtrl.getTemplateUsers)
 
 // ========= Protected Routes ========= 
 router.use(decodeUserFromToken)

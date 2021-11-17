@@ -4,6 +4,7 @@ import { User } from '../models/user.js'
 const getTemplateUsers = async (req, res) => {
     try {
         const users = await User.find()
+        console.log(users)
         return res.status(200).json(users)
 
     } catch (error) {

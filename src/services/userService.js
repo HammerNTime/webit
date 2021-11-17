@@ -1,12 +1,11 @@
-const BASE_URL = '/api/users/'
+const BASE_URL = '/api/users'
 
 
 const getAllUsers = async () => {
     try {
-        const res = await fetch(`${BASE_URL}all-users`, { mode: 'cors' })
-        console.log(res.json())
+        const res = await fetch(`${BASE_URL}/all-users`, { mode: 'cors' })
         const data = await res.json()
-        
+        console.log(data)
         return data
     } catch (error) {
         // throw error
