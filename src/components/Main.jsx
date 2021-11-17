@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from "react"
 import mainStyles from "./mainStyles.module.css"
 
-function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds, textColors, setTextColors }) {
+function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds, textColors, setTextColors, saveTemplate, currentUser }) {
 	const [isActive, setActive] = useState(false)
     const [tool, setTool] = useState(-1)
 	const toggleClass = () => {
 		setActive(!isActive)
 	}
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const templateData = {
+            template_title: e.target.title.value,
+            backgroundColors: backgrounds,
+            added_by: currentUser._id,
+        }
+        saveTemplate(templateData)
+        // console.log(e.target.backgroundColors.value)
+    }
 	useEffect(() => {
 		if (currentTemplate) {
 			setBackgrounds(currentTemplate.backgroundColors)
@@ -216,7 +226,10 @@ function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds, textC
                             </footer>
                         </div>
                         <button onClick={() => { setTool(tool * -1) }}>{tool === -1 ? "Text" : "Background"}</button>
-                        <form action="submit"></form>
+                        <form onSubmit={handleSubmit}>
+                            <input type="text" name="title" placeholder="Template Name" />
+                            <button type="submit">Save Template</button>
+                        </form>
                     </>
                 )
             }
