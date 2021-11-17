@@ -22,7 +22,10 @@ function App() {
 	const [currentUser, setCurrentUser] = useState()
 	const [authenticated, setAuthenticated] = useState(false)
 	const [toggleFeed, setToggleFeed] = useState(true)
-	const [ color, setColor] = useState("#fff")
+	const [color, setColor] = useState("#fff")
+	const [backgrounds, setBackgrounds] = useState([])
+	const [textColors, setTextColors] = useState([])
+
 
 	const handleSignupOrLogin = async () => {
 		const user = getUser()
@@ -65,11 +68,11 @@ function App() {
 					element={
 						<div className={appStyles.main__container}>
 							<>
-								<Main pickedColor={color}/>
+								<Main pickedColor={color} backgrounds={backgrounds} setBackgrounds={setBackgrounds} textColors={textColors} setTextColors={setTextColors} />
 								<div className={pickerStyles.style__container}>
 								<SketchPicker color={color} onChange={c =>
         setColor("#" + rgbHex(c.rgb.r, c.rgb.g, c.rgb.b, c.rgb.a))} />
-									<StyleModal pickedColor={color}/>
+									<StyleModal pickedColor={color} backgrounds={backgrounds} textColors={textColors} />
 							</div>
 							</>
 						</div>

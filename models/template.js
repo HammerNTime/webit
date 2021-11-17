@@ -13,7 +13,10 @@ const templateSchema = new Schema(
 		code_block_css: {
 			type: String,
 		},
-		colors: {
+		backgroundColors: {
+			type: Array,
+		},
+		textColors: {
 			type: Array,
 		},
 		added_by: {

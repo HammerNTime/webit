@@ -3,9 +3,9 @@ import { SketchPicker } from "react-color"
 import pickerStyles from "./pickerStyles.module.css"
 import modalStyles from "./modalStyles.module.css"
 import Modal from "react-modal"
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
-function StyleModal({pickedColor}) {
+function StyleModal({pickedColor, backgrounds}) {
     
     const [modalIsOpen, setModalIsOpen] = useState(false)
    
@@ -85,7 +85,7 @@ function StyleModal({pickedColor}) {
                                   font-family: monospace;
                                   font-weight: 500;
                                   font-size: 16px;
-                                  color: rgb(12, 0, 0);
+                                  color: ${backgrounds[1]};
                                   text-decoration: none;
                                  
                                 }
