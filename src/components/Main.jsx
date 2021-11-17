@@ -7,16 +7,16 @@ function Main() {
         <div className={mainStyles.site__container}>
 
        
-       <header>
-           <div className={mainStyles.logo}>Logo</div>
+       <header style={{color: "black", backgroundColor:"transparent"}}>
+           <div className={mainStyles.logo} style={{color: "black", backgroundColor: "transparent"}}>Logo</div>
            <nav>
-               <ul className={mainStyles.nav__links}>
-                   <li>Home</li>
-                   <li>Pages</li>
-                   <li>About Us</li>
+               <ul className={mainStyles.nav__links} style={{backgroundColor: "transparent"}}>
+                   <li  style={{color: "black", backgroundColor: "transparent"}}>Home</li>
+                   <li style={{color: "black", backgroundColor: "transparent"}}>Pages</li>
+                   <li style={{color: "black", backgroundColor: "transparent"}}>About Us</li>
                </ul>
            </nav>
-           <a href=""><button className={mainStyles.nav__buton}>Contact</button></a>
+           <a href=""><button className={mainStyles.nav__button} style={{color: "black", backgroundColor: "transparent"}}>Contact</button></a>
        </header>
        <section className={mainStyles.search__container}>
        <input type="text" className={mainStyles.search__input} placeholder="Lorem Ipsum" />

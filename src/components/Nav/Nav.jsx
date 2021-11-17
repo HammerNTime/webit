@@ -11,15 +11,21 @@ const Nav = (props) => {
 
     return (
         <nav className="nav-bar">
+            <div className="navbar__container">
 
-            <Link className="logo" to="/home">
-                <img src={LogoDesktop} alt="diso-logo"></img>
+          
+
+                <Link className="logo" to="/home">
+                    <span><i class="fas fa-fill-drip "></i> <span className="logo-color">W</span>ebit</span>
             </Link>
-
+            <div className="auth-container">
+                
             <Link to="/signup">Sign Up</Link>
-
-            <Link to="/signin">Sign In</Link>
-            <button onClick={(e) => props.handleLogout()}>Logout</button>
+                <Link to="/signin">Sign In</Link>
+                <div><i class="fas fa-sign-out-alt"></i></div>
+            {/* <button onClick={(e) => props.handleLogout()}>Logout</button> */}
+                    </div>
+                    </div>
         </nav>
     )
 }

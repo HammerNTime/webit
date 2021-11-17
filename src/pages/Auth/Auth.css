@@ -3,6 +3,9 @@
     height: 94vh;
 }
 
+.signup-page h1, .signup-page h3{
+    color: white;
+}
 .left-container{
     width: 50%;
     display: flex;
@@ -18,6 +21,10 @@
     align-items: center;
     justify-content: center;
     background: #0B0B12;
+}
+
+.right-container .lottie{
+    width: 90%
 }
 
 .title-container{
@@ -53,7 +60,7 @@
     width: 100%;
 }
 
-.form-container input, select, button {
+.form-container input, .form-container select, .form-container button {
     padding: 16px;
     font-size: 16px;
     margin-bottom: 16px;

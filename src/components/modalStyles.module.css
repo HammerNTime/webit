@@ -1,14 +1,50 @@
 .modal__container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
    
 }
-
-.html__code{
-width: 50%;
-/* background-color: black; */
+.close__modal{
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+    font-size: 20px;
 }
-.ccs__code{
-width: 50%;
+
+.html__code, .css__code{
+width: 48%;
 background-color: black;
+color: white;
+font-size: 16px;
+}
+
+.css__title, .html__title{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 3rem;
+    border-bottom: 1px solid white;
+    padding-bottom: 1rem;
+    
+}
+
+.copy__code{
+    cursor: pointer;
+}
+.copy__code:hover{
+    color: rgb(228, 224, 224)
+}
+.recommended{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+.reset__link{
+    cursor: pointer;
+    color: blue;
+}
+.reset__link a{
+    text-decoration: none;
+}
+.reset__link:hover{
+    color: rgb(0, 0, 204);
 }
