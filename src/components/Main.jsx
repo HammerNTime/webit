@@ -1,16 +1,29 @@
-import React from 'react'
+import React, {useState} from 'react'
 import mainStyles from "./mainStyles.module.css"
 
-function Main() {
+function Main({ pickedColor }) {
+    const [isActive, setActive] = useState(false)
+
+    const toggleClass = () => {
+        setActive(!isActive)
+    }
+    function updateColor(e) {
+       
+    }
+    
+   
+  
     return (
+
         <>
-        <div className={mainStyles.site__container}>
+            <div className={mainStyles.site__container}>
+               
 
        
        <header style={{color: "black", backgroundColor:"transparent"}}>
            <div className={mainStyles.logo} style={{color: "black", backgroundColor: "transparent"}}>Logo</div>
            <nav>
-               <ul className={mainStyles.nav__links} style={{backgroundColor: "transparent"}}>
+               <ul className={mainStyles.nav__links } style={{backgroundColor: "transparent"}}>
                    <li  style={{color: "black", backgroundColor: "transparent"}}>Home</li>
                    <li style={{color: "black", backgroundColor: "transparent"}}>Pages</li>
                    <li style={{color: "black", backgroundColor: "transparent"}}>About Us</li>
@@ -39,9 +52,10 @@ function Main() {
                <div className={mainStyles.right__info2} style={{backgroundColor: "rgb(183, 0, 255)"}}></div>
            </div>
        </section>
-       <footer style={{backgroundColor: "black"}}>
-
-       </footer>
+       <footer style={{backgroundColor: `${pickedColor}`}} >
+Hi, I am the footer
+                </footer>
+                
        </div>
 </>
 
