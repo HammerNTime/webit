@@ -1,0 +1,14 @@
+.modal__container{
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+
+.html__code{
+width: 50%;
+/* background-color: black; */
+}
+.ccs__code{
+width: 50%;
+background-color: black;
+}
