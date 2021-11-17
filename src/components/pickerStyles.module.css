@@ -9,3 +9,7 @@
 .modal__button{
     margin: 2rem 0;
 }
+.style__container{
+    display: flex;
+    flex-direction: column;
+}
