@@ -23,10 +23,10 @@ function Profiles() {
     return (
         <div>
             This is for the users
-            {/* {userList.map((user) => (
+            {userList.map((user) => (
                 <UserCard/>
                 
-            ))} */}
+            ))}
         </div>
     )
 }
