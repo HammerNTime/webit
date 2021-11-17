@@ -6,6 +6,9 @@ import { Routes, Navigate, useHistory } from "react-router-dom"
 import { getUser, logout } from "../../services/authService"
 
 import Nav from "../../components/Nav/Nav"
+import Main from "../../components/Main"
+import ColorPicker from "../../components/ColorPicker"
+import appStyles from "./appStyles.module.css"
 
 import SignUp from "../../pages/Auth/SignUp"
 import SignIn from "../../pages/Auth/SignIn"
@@ -50,10 +53,18 @@ function App() {
 	return (
 		<div className="App">
 			&lt;p&gt;working&lt;/p&gt;
-      <Nav handleLogout={handleLogout} />
-
+			<Nav handleLogout={handleLogout} />
 			<Routes>
-
+				<Route
+					exact
+					path="/"
+					element={
+						<div className={appStyles.main__container}>
+							<Main />
+							<ColorPicker />
+						</div>
+					}
+				/>
 				<Route
 					exact
 					path="/signin"
