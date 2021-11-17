@@ -1,47 +1,42 @@
-import * as tokenService from "./tokenService"
+import * as tokenService from './tokenService'
+const BASE_URL = '/api/auth/'
 
-const BASE_URL = "/api/auth"
-
-function signup(user) {
-	return fetch(`${BASE_URL}/signup`, {
-		method: "POST",
-		headers: new Headers({ "Content-Type": "application/json" }),
-		body: JSON.stringify(user),
-	})
-		.then((res) => {
-			return res.json()
-		})
-		.then((json) => {
-			if (json.token) return json.token
-			throw new Error(json.err)
-		})
-		.then((token) => {
-			tokenService.setToken(token)
-		})
-		.catch((err) => {})
+export function getUser() {
+    return tokenService.getUserFromToken()
 }
 
-function getUser() {
-	return tokenService.getUserFromToken()
+export const signup = async (user) => {
+    try {
+        const res = await fetch(`${BASE_URL}signup`, {
+            method: 'POST',
+            headers: new Headers({ 'Content-Type': 'application/json' }),
+            body: JSON.stringify(user)
+        })
+        const data = await res.json()
+        if (data.token) {
+            tokenService.setToken(data.token)
+        } else {
+            throw Error(data.err)
+        }
+    } catch (error) {
+        throw Error(error)
+    }
 }
 
-function logout() {
-	tokenService.removeToken()
+export const login = async (creds) => {
+    const res = await fetch(`${BASE_URL}login`, {
+        method: 'POST',
+        headers: new Headers({ 'Content-Type': 'application/json' }),
+        body: JSON.stringify(creds)
+    })
+    if (res.ok) {
+        const data = await res.json()
+        tokenService.setToken(data.token)
+    } else {
+        throw new Error()
+    }
 }
 
-function login(credentials) {
-	return fetch(`${BASE_URL}/login`, {
-		method: "POST",
-		headers: new Headers({ "Content-Type": "application/json" }),
-		body: JSON.stringify(credentials),
-	})
-		.then((res) => {
-			// Valid login if res.ok
-			if (res.ok) return res.json()
-			throw new Error("Bad Credentials")
-		})
-		.then(({ token }) => tokenService.setToken(token))
-		.catch((err) => {})
+export function logout() {
+    tokenService.removeToken()
 }
-
-export { signup, getUser, logout, login }

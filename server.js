@@ -7,6 +7,8 @@ import cors from "cors"
 
 
 import "./config/database.js"
+import { router as authRouter } from './routes/auth.js'
+import { router as usersRouter} from './routes/users.js'
 
 const app = express()
 
@@ -16,6 +18,8 @@ app.use(cors())
 app.use(logger("dev"))
 app.use(express.json())
 
+app.use('/api/auth', authRouter)
+app.use('/api/users', usersRouter)
 
 
 app.get('/*', (req, res) => {
