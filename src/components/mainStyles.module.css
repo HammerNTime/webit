@@ -119,3 +119,11 @@ footer{
     height: 20px;
     padding: 30px 10%;
 }
+footer:active, footer:focus{
+    border: 3pt dashed red;
+}
+.selected {
+    border: 1px solid blue;
+    color: red;
+    width: 200px;
+  }

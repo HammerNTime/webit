@@ -11,6 +11,8 @@ import styleModule from "../../components/styleModal"
 import appStyles from "./appStyles.module.css"
 import { SketchPicker } from "react-color"
 import pickerStyles from "../../components/pickerStyles.module.css"
+import rgbHex from "rgb-hex";
+
 
 import SignUp from "../../pages/Auth/SignUp"
 import SignIn from "../../pages/Auth/SignIn"
@@ -20,7 +22,6 @@ function App() {
 	const [authenticated, setAuthenticated] = useState(false)
 	const [toggleFeed, setToggleFeed] = useState(true)
 	const [ color, setColor] = useState("#fff")
-    const [modalIsOpen, setModalIsOpen] = useState(false)
 
 	const handleSignupOrLogin = async () => {
 		const user = getUser()
@@ -66,7 +67,8 @@ function App() {
 							<>
 								<Main pickedColor={color}/>
 								<div className={pickerStyles.style__container}>
-								<SketchPicker color={color} onChange={updatedColor => setColor(updatedColor.hex)} />
+								<SketchPicker color={color} onChange={c =>
+        setColor("#" + rgbHex(c.rgb.r, c.rgb.g, c.rgb.b, c.rgb.a))} />
 									<styleModule pickedColor={color}/>
 							</div>
 							</>
