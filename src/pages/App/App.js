@@ -12,7 +12,8 @@ import appStyles from "./appStyles.module.css"
 import { SketchPicker } from "react-color"
 import pickerStyles from "../../components/pickerStyles.module.css"
 import rgbHex from "rgb-hex";
-
+import Profile from "../profile/Profile"
+import Profiles from "../profiles/profiles"
 
 import SignUp from "../../pages/Auth/SignUp"
 import SignIn from "../../pages/Auth/SignIn"
@@ -32,7 +33,6 @@ function App() {
 		setAuthenticated(true)
 	}
 	useEffect(() => {
-		console.log(currentUser)
 	}, [currentUser])
 
 	const handleLogout = () => {
@@ -88,6 +88,16 @@ function App() {
 					exact
 					path="/signup"
 					element={<SignUp handleSignupOrLogin={handleSignupOrLogin} />}
+				/>
+				<Route
+					exact path="/profile"
+					element={<Profile currentUser={currentUser} handleLogout={ handleLogout}/>}
+				
+				/>
+				<Route
+					exact path="/profiles"
+					element={<Profiles currentUser={currentUser} handleLogout={ handleLogout}/>}
+				
 				/>
 			</Routes>
 		</div>
