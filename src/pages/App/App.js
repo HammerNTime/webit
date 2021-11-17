@@ -7,8 +7,10 @@ import { getUser, logout } from "../../services/authService"
 
 import Nav from "../../components/Nav/Nav"
 import Main from "../../components/Main"
-import ColorPicker from "../../components/ColorPicker"
+import styleModule from "../../components/styleModal"
 import appStyles from "./appStyles.module.css"
+import { SketchPicker } from "react-color"
+import pickerStyles from "../../components/pickerStyles.module.css"
 
 import SignUp from "../../pages/Auth/SignUp"
 import SignIn from "../../pages/Auth/SignIn"
@@ -17,6 +19,8 @@ function App() {
 	const [currentUser, setCurrentUser] = useState()
 	const [authenticated, setAuthenticated] = useState(false)
 	const [toggleFeed, setToggleFeed] = useState(true)
+	const [ color, setColor] = useState("#fff")
+    const [modalIsOpen, setModalIsOpen] = useState(false)
 
 	const handleSignupOrLogin = async () => {
 		const user = getUser()
@@ -60,9 +64,11 @@ function App() {
 					element={
 						<div className={appStyles.main__container}>
 							<>
-							<Main />
-								<ColorPicker />
-								
+								<Main pickedColor={color}/>
+								<div className={pickerStyles.style__container}>
+								<SketchPicker color={color} onChange={updatedColor => setColor(updatedColor.hex)} />
+									<styleModule pickedColor={color}/>
+							</div>
 							</>
 						</div>
 					}

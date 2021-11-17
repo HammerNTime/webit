@@ -18,28 +18,28 @@ function Main() {
            </nav>
            <a href=""><button className={mainStyles.nav__button} style={{color: "black", backgroundColor: "transparent"}}>Contact</button></a>
        </header>
-       <section className={mainStyles.search__container}>
+       <section className={mainStyles.search__container} style={{backgroundColor: "#ccc"}}>
        <input type="text" className={mainStyles.search__input} placeholder="Lorem Ipsum" />
       
-      <button type="submit" className={mainStyles.search__button}>Search</button>
+      <button type="submit" className={mainStyles.search__button} style={{backgroundColor: "#000", color: "#fff"}}>Search</button>
 
        </section>
-       <section className={mainStyles.extra__links}>
-        <div className={mainStyles.extra__link_item}><p>HI</p></div>
-        <div className={mainStyles.extra__link_item}><p>HI</p></div>
-        <div className={mainStyles.extra__link_item}><p>HI</p></div>
-        <div className={mainStyles.extra__link_item}><p>HI</p></div>
-        <div className={mainStyles.extra__link_item}><p>HI</p></div>
+       <section className={mainStyles.extra__links}  style={{backgroundColor: "#ccc"}}>
+        <div className={mainStyles.extra__link_item} style={{backgroundColor: "red"}}><p>HI</p></div>
+        <div className={mainStyles.extra__link_item} style={{backgroundColor: "red"}}><p>HI</p></div>
+        <div className={mainStyles.extra__link_item} style={{backgroundColor: "red"}}><p>HI</p></div>
+        <div className={mainStyles.extra__link_item} style={{backgroundColor: "red"}}><p>HI</p></div>
+        <div className={mainStyles.extra__link_item} style={{backgroundColor: "red"}}><p>HI</p></div>
         
        </section>
        <section className={mainStyles.main__container}>
-           <div className={mainStyles.left__side}></div>
+           <div className={mainStyles.left__side} style={{backgroundColor: "red"}}></div>
            <div className={mainStyles.right__side}>
-               <div className={mainStyles.right__info1}></div>
-               <div className={mainStyles.right__info2}></div>
+               <div className={mainStyles.right__info1} style={{backgroundColor: "rgb(36, 3, 3)"}}></div>
+               <div className={mainStyles.right__info2} style={{backgroundColor: "rgb(183, 0, 255)"}}></div>
            </div>
        </section>
-       <footer>
+       <footer style={{backgroundColor: "black"}}>
 
        </footer>
        </div>

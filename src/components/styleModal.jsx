@@ -7,15 +7,14 @@ import styled from 'styled-components'
 
 function ColorPicker() {
     
-    const [ color, setColor] = useState("#fff")
     const [modalIsOpen, setModalIsOpen] = useState(false)
    
     
     return (
         <div className={pickerStyles.container}>
-            <div style={{width: "200px", height: "200px", color: "white", background: `${color}` }}></div>
+            {/* <div style={{width: "200px", height: "200px", color: "white", background: `${color}` }}></div> */}
 
-            <SketchPicker color={color} onChange={updatedColor => setColor(updatedColor.hex)} />
+            {/* <SketchPicker color={color} onChange={updatedColor => setColor(updatedColor.hex)} /> */}
             <button className={pickerStyles.modal__button}onClick={() => setModalIsOpen(true)}>View Code</button>
 
             <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
