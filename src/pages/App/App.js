@@ -16,7 +16,6 @@ import rgbHex from "rgb-hex";
 
 import SignUp from "../../pages/Auth/SignUp"
 import SignIn from "../../pages/Auth/SignIn"
-import { text } from "express"
 
 function App() {
 	const [currentUser, setCurrentUser] = useState()

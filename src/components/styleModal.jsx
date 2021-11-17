@@ -3,7 +3,7 @@ import { SketchPicker } from "react-color"
 import pickerStyles from "./pickerStyles.module.css"
 import modalStyles from "./modalStyles.module.css"
 import Modal from "react-modal"
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
 function StyleModal({pickedColor, backgrounds}) {
     

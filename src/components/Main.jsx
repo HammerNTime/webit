@@ -34,8 +34,8 @@ function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds, textC
 				"red",
 			])
 		}
-	}, [currentTemplate])
-	function changeColor(pickedColor, e, stop) {
+	}, [])
+	function changeColor(pickedColor, e) {
 		console.log(e.target.style, "Target ID")
 		if (e.target.id === "100") {
 			return
