@@ -1,0 +1,119 @@
+.profile__page {
+    height: 90vh;
+    display: flex;
+    overflow-y: scroll;
+}
+
+.profile__left {
+    width: 25%;
+    height: 100%;
+    padding: 10px 0px 10px 10px;
+}
+
+.profile__user__info {
+    background: #12121b;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #26262b;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.profile__right {
+    width: 75%;
+    padding-top: 10px;
+}
+
+.profile__left img{
+    width: 200px;
+    border: 2px solid #4d4d63;
+    border-radius: 100%;
+    margin-bottom: 25px;
+}
+
+.profile__left h3, h4{
+    color: rgb(220, 220, 220);
+}
+
+.profile__left h4{
+    opacity: .75;
+}
+
+.profile__post__container {
+    padding: 0px 10px 0px 10px;
+}
+
+.sub__container {
+    padding: 0px 10px 0px 10px;
+}
+
+.profile__posts__header {
+    background: #12121b;
+    box-sizing: border-box;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #26262b;
+    border-radius: 8px 8px 0px 0px;
+    color: rgb(200, 200, 200);
+}
+
+.profile__posts__header h3{
+    margin-left: 14px;
+}
+
+/* Template palette example */
+.template__palette{
+    width: 100%;
+    height: 100px;
+    border: 1px solid #26262b;
+  border-radius: 8px 8px 0px 0px;
+  background: #12121b;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  display: grid;
+  grid-auto-flow: column;
+  cursor: pointer;
+
+
+
+}
+.template__color{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+}
+.profile__user__info button {
+    color: white;
+    background: #0B0B12;
+    border: 1px solid #292934;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.profile__user__info a {
+    text-decoration: none;
+    color: white;
+}
+
+  @media only screen and (max-width: 850px) {
+    .profile-page{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile__left {
+        width: 100%;
+        height: auto;
+    }
+    
+    .profile__right {
+        width: 100%;
+    }
+  }

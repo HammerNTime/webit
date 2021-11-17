@@ -1,11 +1,9 @@
 import { User } from '../models/user.js'
 
 
-const getTopUsers = async (req, res) => {
+const getTemplateUsers = async (req, res) => {
     try {
         const users = await User.find()
-            .sort({ solution_count: -1 })
-            .limit(5)
         return res.status(200).json(users)
 
     } catch (error) {
@@ -13,8 +11,23 @@ const getTopUsers = async (req, res) => {
     }
 }
 
+const getAllUsers = async (req, res) => {
+    try {
+        User.find({}, function (err, users) {
+            const userList = {}
+            users.forEach(function (user) {
+                userList[user._id] = user
+            })
+        })
+
+    } catch (error) {
+        console.error(error)
+    }
+    
+}
 
 
 export {
-    getTopUsers
+    getTemplateUsers,
+    getAllUsers
 }

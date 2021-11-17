@@ -4,13 +4,10 @@ import mainStyles from "./mainStyles.module.css"
 function Main({ pickedColor }) {
     const [isActive, setActive] = useState(false)
 
-    const toggleClass = () => {
+    const toggleActiveClass = () => {
         setActive(!isActive)
     }
-    function updateColor(e) {
-       
-    }
-    
+  
    
   
     return (
@@ -29,7 +26,7 @@ function Main({ pickedColor }) {
                    <li style={{color: "black", backgroundColor: "transparent"}}>About Us</li>
                </ul>
            </nav>
-           <a href=""><button className={mainStyles.nav__button} style={{color: "black", backgroundColor: "transparent"}}>Contact</button></a>
+           <a href="#"><button className={mainStyles.nav__button} style={{color: "black", backgroundColor: "transparent"}}>Contact</button></a>
        </header>
        <section className={mainStyles.search__container} style={{backgroundColor: "#ccc"}}>
        <input type="text" className={mainStyles.search__input} placeholder="Lorem Ipsum" />
@@ -55,6 +52,9 @@ function Main({ pickedColor }) {
        <footer style={{backgroundColor: `${pickedColor}`}} >
 Hi, I am the footer
                 </footer>
+                <div onClick={ toggleActiveClass} className={isActive ? mainStyles.selected : null} style={{width: "100%", height: "50px", backgroundColor: "red", cursor: "pointer"}}>
+                    
+                </div>
                 
        </div>
 </>

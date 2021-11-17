@@ -9,6 +9,7 @@ import "./config/database.js"
 import { router as authRouter } from "./routes/auth.js"
 import { router as usersRouter } from "./routes/users.js"
 import { router as templateRouter } from "./routes/template.js"
+import { User } from "./models/user.js"
 
 const app = express()
 
@@ -41,6 +42,7 @@ app.get("/*", (req, res) => {
 // 		path.join(path.dirname(fileURLToPath(import.meta.url)), "build", "index.html")
 // 	)
 // })
+
 
 const port = process.env.PORT || 3001
 
