@@ -24,6 +24,10 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    templates: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Template"
+    }
 }, {
     timestamps: true
 })
