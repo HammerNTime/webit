@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react"
 import mainStyles from "./mainStyles.module.css"
 
-function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds }) {
+function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds, textColors, setTextColors }) {
 	const [isActive, setActive] = useState(false)
-
+    const [tool, setTool] = useState(-1)
 	const toggleClass = () => {
 		setActive(!isActive)
 	}
 	useEffect(() => {
 		if (currentTemplate) {
-			setBackgrounds(currentTemplate.colors)
+			setBackgrounds(currentTemplate.backgroundColors)
 		} else {
 			setBackgrounds([
 				"transparent",
@@ -40,12 +40,20 @@ function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds }) {
 		if (e.target.id === "100") {
 			return
 		} else {
-			console.log(pickedColor)
-			console.log(backgrounds[e.target.id])
-			backgrounds[e.target.id] = pickedColor
-			console.log(backgrounds)
-			setBackgrounds(backgrounds)
-			e.target.style.backgroundColor = pickedColor
+            if (tool === -1){
+                console.log(pickedColor)
+                console.log(backgrounds[e.target.id])
+                backgrounds[e.target.id] = pickedColor
+                console.log(backgrounds)
+                setBackgrounds(backgrounds)
+                e.target.style.backgroundColor = pickedColor
+            } else {
+                textColors[e.target.id] = pickedColor
+                console.log(textColors)
+                setTextColors(textColors)
+                e.target.style.color = pickedColor
+
+            }
 		}
 	}
 
@@ -200,6 +208,7 @@ function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds }) {
 					Hi, I am the footer
 				</footer>
 			</div>
+            <button onClick={() => {setTool(tool * -1)}}>{tool === -1 ? "Text" : "Background"}</button>
             <form action="submit"></form>
 		</>
 	)
