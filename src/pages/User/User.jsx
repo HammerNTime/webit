@@ -48,7 +48,7 @@ function User(props) {
             <UserCard handle={userData?.handle} avatar={userData?.avatar} templates={userData?.templates} />
             {templatesArray?.map((template) => (
 
-                <Template template={template} backgroundColors={template.backgroundColors} textColors={template.textColors} title={template.template_title ? template.template_title : "Special Template"} id={ template._id}/>
+                <Template template={template} backgroundColors={template.backgroundColors} textColors={template.textColors} title={template.template_title ? template.template_title : "Special Template"} id={ template._id} userId={params.id}/>
             ))}
         </div>
     )

@@ -9,6 +9,6 @@ router.get("/all", templateCtrl.getAllTemplates)
 router.get("/:id", templateCtrl.getTemplateById)
 router.get("/user/:id", templateCtrl.getTemplatesByUserId)
 router.post("/create", templateCtrl.create)
-router.delete("/:id", templateCtrl.deleteTemplate)
+router.delete("/:templateId/:userId", templateCtrl.deleteTemplate)
 
 export { router }

@@ -40,10 +40,10 @@ export const getTemplateByUser = async (id) => {
 		throw error
 	}
 }
-export const deleteTemplate = async (postId) => {
+export const deleteTemplate = async (templateId, userId) => {
 	try {
 		await fetch(
-			`${BASE_URL}/${postId}`,
+			`${BASE_URL}/${templateId}/${userId}`,
 			{
 				method: "DELETE",
 				headers: { Authorization: "Bearer " + tokenService.getToken() },
