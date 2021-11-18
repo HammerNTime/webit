@@ -14,6 +14,7 @@ import pickerStyles from "../../components/pickerStyles.module.css"
 import rgbHex from "rgb-hex";
 import Profile from "../profile/Profile"
 import Profiles from "../profiles/profiles"
+import User from "../User/User"
 
 import SignUp from "../../pages/Auth/SignUp"
 import SignIn from "../../pages/Auth/SignIn"
@@ -107,6 +108,9 @@ function App() {
 					exact path="/profiles"
 					element={<Profiles currentUser={currentUser} handleLogout={ handleLogout}/>}
 				
+				/>
+				<Route exact path="/profiles/:id"
+				element={<User/>}
 				/>
 			</Routes>
 		</div>
