@@ -37,6 +37,10 @@ function Main({
         }
     }, [params.id]);
     const resetTemplate = () => {
+        window.location.reload(false)
+    }
+    const initTemplate = () => {
+        // window.location.reload(false)
         setBackgrounds([
             "transparent",
             "silver",
@@ -83,27 +87,22 @@ function Main({
     }
 	useEffect(() => {
 		if (currentTemplate) {
-			setBackgrounds(currentTemplate.backgroundColors)
-			setTextColors(currentTemplate.textColors)
+			setBackgrounds(currentTemplate?.backgroundColors)
+			setTextColors(currentTemplate?.textColors)
 		} else {
-			resetTemplate()
+			initTemplate()
 		}
 	}, [currentTemplate])
 	function changeColor(pickedColor, e) {
-		console.log(e.target.style, "Target ID")
 		if (e.target.id === "100") {
 			return
 		} else {
 			if (tool === -1) {
-				console.log(pickedColor)
-				console.log(backgrounds[e.target.id])
 				backgrounds[e.target.id] = pickedColor
-				console.log(backgrounds)
 				setBackgrounds(backgrounds)
 				e.target.style.backgroundColor = pickedColor
 			} else {
 				textColors[e.target.id] = pickedColor
-				console.log(textColors)
 				setTextColors(textColors)
 				e.target.style.color = pickedColor
 			}
@@ -113,6 +112,7 @@ function Main({
 	return (
 		<>
 			<div>
+                {currentTemplate ? <div>{currentTemplate.template_title}</div> : ""}
 				<div
 					id="0"
 					style={{ backgroundColor: backgrounds[0] }}
