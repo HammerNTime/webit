@@ -9,6 +9,7 @@ import "./config/database.js"
 import { router as authRouter } from "./routes/auth.js"
 import { router as usersRouter } from "./routes/users.js"
 import { router as templateRouter } from "./routes/template.js"
+import { router as profilesRouter } from "./routes/profiles.js"
 
 const app = express()
 
@@ -25,6 +26,7 @@ app.use(express.json())
 app.use("/api/auth", authRouter)
 app.use("/api/users", usersRouter)
 app.use("/api/template", templateRouter)
+app.use("/api/profiles", profilesRouter)
 
 app.get("/*", (req, res) => {
 	res.sendFile(

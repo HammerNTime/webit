@@ -28,7 +28,7 @@ function Profiles() {
             {userList.map((user) => (
                 <div >
 
-                    <UserCard className={userStyles.user} avatar={user.avatar} name={user.handle} templates={ user.templates}/>
+                    <UserCard className={userStyles.user} avatar={user.avatar} name={user.handle} templates={user.templates} id={ user._id}/>
                 </div>
                 
             ))}
