@@ -1,15 +1,27 @@
 import React, { useState, useEffect } from "react"
 import mainStyles from "./mainStyles.module.css"
 
-function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds, textColors, setTextColors }) {
+function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds, textColors, setTextColors, saveTemplate, currentUser }) {
 	const [isActive, setActive] = useState(false)
     const [tool, setTool] = useState(-1)
 	const toggleClass = () => {
 		setActive(!isActive)
 	}
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const templateData = {
+            template_title: e.target.title.value,
+            backgroundColors: backgrounds,
+            textColors: textColors,
+            added_by: currentUser._id,
+        }
+        saveTemplate(templateData)
+        // console.log(e.target.backgroundColors.value)
+    }
 	useEffect(() => {
 		if (currentTemplate) {
 			setBackgrounds(currentTemplate.backgroundColors)
+            setTextColors(currentTemplate.textColors)
 		} else {
 			setBackgrounds([
 				"transparent",
@@ -33,8 +45,30 @@ function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds, textC
 				"yellow",
 				"red",
 			])
+            setTextColors([
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+                "black",
+            ])
 		}
-	}, [])
+	}, [currentTemplate])
 	function changeColor(pickedColor, e) {
 		console.log(e.target.style, "Target ID")
         if (e.target.id === "100") {
@@ -74,12 +108,12 @@ function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds, textC
                         >
                             <header
                                 id="1"
-                                style={{ color: "black", backgroundColor: backgrounds[1] }}
+                                style={{ color: textColors[1], backgroundColor: backgrounds[1] }}
                             >
                                 <div
                                     id="2"
                                     className={mainStyles.logo}
-                                    style={{ color: "black", backgroundColor: backgrounds[2] }}
+                                    style={{ color: textColors[2], backgroundColor: backgrounds[2] }}
                                 >
                                     Logo
                                 </div>
@@ -91,19 +125,19 @@ function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds, textC
                                     >
                                         <li
                                             id="3"
-                                            style={{ color: "black", backgroundColor: backgrounds[3] }}
+                                            style={{ color: textColors[3], backgroundColor: backgrounds[3] }}
                                         >
                                             Home
                                         </li>
                                         <li
                                             id="4"
-                                            style={{ color: "black", backgroundColor: backgrounds[4] }}
+                                            style={{ color: textColors[4], backgroundColor: backgrounds[4] }}
                                         >
                                             Pages
                                         </li>
                                         <li
                                             id="5"
-                                            style={{ color: "black", backgroundColor: backgrounds[5] }}
+                                            style={{ color: textColors[5], backgroundColor: backgrounds[5] }}
                                         >
                                             About Us
                                         </li>
@@ -113,7 +147,7 @@ function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds, textC
                                     <button
                                         id="6"
                                         className={mainStyles.nav__button}
-                                        style={{ color: "black", backgroundColor: backgrounds[6] }}
+                                        style={{ color: textColors[6], backgroundColor: backgrounds[6] }}
                                     >
                                         Contact
                                     </button>
@@ -128,7 +162,7 @@ function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds, textC
                                     id="8"
                                     type="text"
                                     className={mainStyles.search__input}
-                                    style={{ color: "black", backgroundColor: backgrounds[8] }}
+                                    style={{ color: textColors[8], backgroundColor: backgrounds[8] }}
                                     placeholder="Lorem Ipsum"
                                 />
 
@@ -136,7 +170,7 @@ function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds, textC
                                     id="9"
                                     type="submit"
                                     className={mainStyles.search__button}
-                                    style={{ backgroundColor: backgrounds[9], color: "#fff" }}
+                                    style={{ backgroundColor: backgrounds[9], color: textColors[9] }}
                                 >
                                     Search
                                 </button>
@@ -216,7 +250,10 @@ function Main({ pickedColor, currentTemplate, backgrounds, setBackgrounds, textC
                             </footer>
                         </div>
                         <button onClick={() => { setTool(tool * -1) }}>{tool === -1 ? "Text" : "Background"}</button>
-                        <form action="submit"></form>
+                        <form onSubmit={handleSubmit}>
+                            <input type="text" name="title" placeholder="Template Name" />
+                            <button type="submit">Save Template</button>
+                        </form>
                     </>
                 )
             }

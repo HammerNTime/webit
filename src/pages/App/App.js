@@ -17,6 +17,7 @@ import Profiles from "../profiles/profiles"
 
 import SignUp from "../../pages/Auth/SignUp"
 import SignIn from "../../pages/Auth/SignIn"
+import { createTemplate } from "../../services/templateService"
 
 function App() {
 	const [currentUser, setCurrentUser] = useState()
@@ -41,6 +42,14 @@ function App() {
 		setAuthenticated(false)
 		setToggleFeed(true)
 	}
+	const saveTemplate = async (template) => {
+		console.log(template)
+		try {
+			createTemplate(template)
+		} catch (error) {
+			throw error
+		}
+	}
 
 	useEffect(() => {
 		const verifyToken = async () => {
@@ -60,7 +69,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<Nav handleLogout={handleLogout} />
+			<Nav handleLogout={handleLogout} currentUser={currentUser}/>
 			<Routes>
 				<Route
 					exact
@@ -68,7 +77,7 @@ function App() {
 					element={
 						<div className={appStyles.main__container}>
 							<>
-								<Main pickedColor={color} backgrounds={backgrounds} setBackgrounds={setBackgrounds} textColors={textColors} setTextColors={setTextColors} />
+								<Main pickedColor={color} backgrounds={backgrounds} setBackgrounds={setBackgrounds} textColors={textColors} setTextColors={setTextColors} currentUser={currentUser} saveTemplate={saveTemplate} />
 								<div className={pickerStyles.style__container}>
 								<SketchPicker color={color} onChange={c =>
         setColor("#" + rgbHex(c.rgb.r, c.rgb.g, c.rgb.b, c.rgb.a))} />
