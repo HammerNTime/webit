@@ -26,7 +26,7 @@ const SignIn = (props) => {
         try {
             await login(formData) // replaced signup with login
             props.handleSignupOrLogin()
-            history.push('/home')
+            history('/')
         } catch (error) {
             setAuthError(error.message)
             setFormData({

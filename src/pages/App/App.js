@@ -69,7 +69,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<Nav handleLogout={handleLogout} />
+			<Nav handleLogout={handleLogout} currentUser={currentUser}/>
 			<Routes>
 				<Route
 					exact

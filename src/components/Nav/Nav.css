@@ -3,6 +3,9 @@
 
 
 }
+#avatar {
+    height: 50px;
+}
 
 .navbar__container{
     height: 70px;
@@ -17,6 +20,15 @@ margin: 0 3rem;
 .auth-container{
     color: white;
     display: flex;
+}
+.auth-container-signed_in {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.auth-container-signed_in > div {
+    margin-left: 10px;
 }
 .auth-container a{
     color: white;
