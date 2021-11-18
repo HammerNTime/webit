@@ -280,7 +280,7 @@ function Main({
 							setTool(tool * -1)
 						}}
 					>
-						{tool === -1 ? "Text" : "Background"}
+						{tool === -1 ? "Color Text" : "Color Background"}
 					</button>
                     <button onClick={() => resetTemplate()}>Reset</button>
 					<form onSubmit={handleSubmit}>
