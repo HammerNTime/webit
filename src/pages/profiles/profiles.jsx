@@ -3,7 +3,6 @@ import { getAllUsers } from "../../services/userService";
 import UserCard from './UserCard';
 import userStyles from "./userStyles.module.css"
 
-
 function Profiles() {
     const [userList, setUserList] = useState([])
     
@@ -29,7 +28,7 @@ function Profiles() {
             {userList.map((user) => (
                 <div >
 
-                    <UserCard className={userStyles.user} avatar={user.avatar} name={user.handle} />
+                    <UserCard className={userStyles.user} avatar={user.avatar} name={user.handle} templates={ user.templates}/>
                 </div>
                 
             ))}

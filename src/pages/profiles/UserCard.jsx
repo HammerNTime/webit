@@ -1,7 +1,7 @@
 import React from 'react'
 import userStyles from "./userStyles.module.css"
 
-function userCard({ avatar, name}) {
+function userCard({ avatar, name, templates}) {
     return (
         <div className={userStyles.container}>
             <div className={userStyles.profile_card}>
@@ -13,7 +13,7 @@ function userCard({ avatar, name}) {
   
       <h1>{name}</h1>
    
-      <h2>3 Templates</h2>
+                    <h2>{ templates.length > 0 ? templates.length + "templates" : "No Templates"}</h2>
   
     </header>
   
