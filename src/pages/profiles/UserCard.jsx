@@ -1,13 +1,13 @@
 import React from 'react'
 import userStyles from "./userStyles.module.css"
 
-function userCard({ avatar, name, templates, id}) {
+function userCard({ avatar, name, templates, id, currentUser}) {
     return (
         <div className={userStyles.container}>
             <div className={userStyles.profile_card}>
     <header>
   
-      <a href={`profiles/${id}`}>
+      <a href={currentUser._id === id ? `/profile` : `/profiles/${id}`}>
                         <img src={ avatar}size="200" alt="profile" />
       </a>
   

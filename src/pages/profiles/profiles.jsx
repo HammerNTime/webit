@@ -3,7 +3,7 @@ import { getAllUsers } from "../../services/userService";
 import UserCard from './UserCard';
 import userStyles from "./userStyles.module.css"
 
-function Profiles() {
+function Profiles({currentUser}) {
     const [userList, setUserList] = useState([])
     
     useEffect(() => {
@@ -28,7 +28,7 @@ function Profiles() {
             {userList.map((user) => (
                 <div >
 
-                    <UserCard className={userStyles.user} avatar={user.avatar} name={user.handle} templates={user.templates} id={ user._id}/>
+                    <UserCard className={userStyles.user} avatar={user.avatar} name={user.handle} templates={user.templates} id={ user._id} currentUser={currentUser}/>
                 </div>
                 
             ))}
