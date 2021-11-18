@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import profileStyles from "./profile.module.css"
 
 function Profile({currentUser, handleLogout}) {
     const { _id, avatar, handle } = currentUser || {}
-    
+    console.log(currentUser)
     
     return (
         <div className={profileStyles.profile__page}>

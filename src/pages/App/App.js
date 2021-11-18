@@ -1,46 +1,47 @@
 import React, { useState, useEffect } from "react"
-import "./App.css"
 import { Routes, Route } from "react-router-dom"
+import rgbHex from "rgb-hex"
+import { SketchPicker } from "react-color"
 
-import { getUser, logout } from "../../services/authService"
+//Styles
+import "./App.css"
+import appStyles from "./appStyles.module.css"
 
+//Components
 import Nav from "../../components/Nav/Nav"
 import Main from "../../components/Main"
 import StyleModal from "../../components/styleModal"
-import appStyles from "./appStyles.module.css"
-import { SketchPicker } from "react-color"
 import pickerStyles from "../../components/pickerStyles.module.css"
-import rgbHex from "rgb-hex";
+
+//pages
 import Profile from "../profile/Profile"
 import Profiles from "../profiles/profiles"
 import User from "../User/User"
-
 import SignUp from "../../pages/Auth/SignUp"
 import SignIn from "../../pages/Auth/SignIn"
+
+//Services
+import { getUser, logout } from "../../services/authService"
 import { createTemplate } from "../../services/templateService"
 
 function App() {
 	const [currentUser, setCurrentUser] = useState()
 	const [authenticated, setAuthenticated] = useState(false)
-	// const [toggleFeed, setToggleFeed] = useState(true)
 	const [color, setColor] = useState("#fff")
 	const [backgrounds, setBackgrounds] = useState([])
 	const [textColors, setTextColors] = useState([])
-
 
 	const handleSignupOrLogin = async () => {
 		const user = getUser()
 		setCurrentUser(user)
 		setAuthenticated(true)
 	}
-	useEffect(() => {
-	}, [currentUser])
+	useEffect(() => {}, [currentUser])
 
 	const handleLogout = () => {
 		logout()
 		setCurrentUser(null)
 		setAuthenticated(false)
-		// setToggleFeed(true)
 	}
 	const saveTemplate = async (template) => {
 		console.log(template)
@@ -69,7 +70,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<Nav handleLogout={handleLogout} currentUser={currentUser}/>
+			<Nav handleLogout={handleLogout} currentUser={currentUser} />
 			<Routes>
 				<Route
 					exact
@@ -77,12 +78,28 @@ function App() {
 					element={
 						<div className={appStyles.main__container}>
 							<>
-								<Main pickedColor={color} backgrounds={backgrounds} setBackgrounds={setBackgrounds} textColors={textColors} setTextColors={setTextColors} currentUser={currentUser} saveTemplate={saveTemplate} />
+								<Main
+									pickedColor={color}
+									backgrounds={backgrounds}
+									setBackgrounds={setBackgrounds}
+									textColors={textColors}
+									setTextColors={setTextColors}
+									currentUser={currentUser}
+									saveTemplate={saveTemplate}
+								/>
 								<div className={pickerStyles.style__container}>
-								<SketchPicker color={color} onChange={c =>
-        setColor("#" + rgbHex(c.rgb.r, c.rgb.g, c.rgb.b, c.rgb.a))} />
-									<StyleModal pickedColor={color} backgrounds={backgrounds} textColors={textColors} />
-							</div>
+									<SketchPicker
+										color={color}
+										onChange={(c) =>
+											setColor("#" + rgbHex(c.rgb.r, c.rgb.g, c.rgb.b, c.rgb.a))
+										}
+									/>
+									<StyleModal
+										pickedColor={color}
+										backgrounds={backgrounds}
+										textColors={textColors}
+									/>
+								</div>
 							</>
 						</div>
 					}
@@ -99,18 +116,20 @@ function App() {
 					element={<SignUp handleSignupOrLogin={handleSignupOrLogin} />}
 				/>
 				<Route
-					exact path="/profile"
-					element={<Profile currentUser={currentUser} handleLogout={ handleLogout}/>}
-				
+					exact
+					path="/profile"
+					element={
+						<Profile currentUser={currentUser} handleLogout={handleLogout} />
+					}
 				/>
 				<Route
-					exact path="/profiles"
-					element={<Profiles currentUser={currentUser} handleLogout={ handleLogout}/>}
-				
+					exact
+					path="/profiles"
+					element={
+						<Profiles currentUser={currentUser} handleLogout={handleLogout} />
+					}
 				/>
-				<Route exact path="/profiles/:id"
-				element={<User/>}
-				/>
+				<Route exact path="/profiles/:id" element={<User />} />
 			</Routes>
 		</div>
 	)
