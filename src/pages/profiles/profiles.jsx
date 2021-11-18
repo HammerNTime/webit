@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { getAllUsers } from "../../services/userService";
 import UserCard from './UserCard';
+import userStyles from "./userStyles.module.css"
+
 
 function Profiles() {
     const [userList, setUserList] = useState([])
@@ -21,13 +23,18 @@ function Profiles() {
 
     console.log("this is userList", userList)
     return (
-        <div>
-            This is for the users
+        <section className={userStyles.wrapper}>
+
+        <div className={userStyles.row}>
             {userList.map((user) => (
-                <UserCard/>
+                <div >
+
+                    <UserCard className={userStyles.user} avatar={user.avatar} name={user.handle} />
+                </div>
                 
             ))}
         </div>
+        </section>
     )
 }
 
