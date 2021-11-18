@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from "react"
-import "./App.css"
 import { Routes, Route } from "react-router-dom"
+import rgbHex from "rgb-hex";
+import { SketchPicker } from "react-color"
 
-import { getUser, logout } from "../../services/authService"
+//Styles
+import "./App.css"
+import appStyles from "./appStyles.module.css"
 
+//Components
 import Nav from "../../components/Nav/Nav"
 import Main from "../../components/Main"
 import StyleModal from "../../components/styleModal"
-import appStyles from "./appStyles.module.css"
-import { SketchPicker } from "react-color"
 import pickerStyles from "../../components/pickerStyles.module.css"
-import rgbHex from "rgb-hex";
+
+//pages
 import Profile from "../profile/Profile"
 import Profiles from "../profiles/profiles"
 import User from "../User/User"
-
 import SignUp from "../../pages/Auth/SignUp"
 import SignIn from "../../pages/Auth/SignIn"
+
+//Services
+import { getUser, logout } from "../../services/authService"
 import { createTemplate } from "../../services/templateService"
+
 
 function App() {
 	const [currentUser, setCurrentUser] = useState()

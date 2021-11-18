@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 
 import { getProfileById } from '../../services/profileService'
@@ -7,8 +7,9 @@ import { getProfileById } from '../../services/profileService'
 function User(props) {
 
     // console.log("props", props)
-    const { id } = props.match.params
-
+    // const id  = props.match.params
+    const id = useParams()
+    console.log(id, "this is the ID")
     const navigate = useNavigate()
     console.log("navigate", navigate)
 
