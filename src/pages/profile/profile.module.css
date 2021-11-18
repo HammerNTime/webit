@@ -7,10 +7,9 @@
 }
 
 .profile__page {
-    height: auto;
+    height: 90vh;
     display: flex;
     overflow-y: scroll;
-    align-items: center;
     
 }
 .main_container{
@@ -24,7 +23,7 @@
 .profile__left {
     width: 25%;
     height: 100%;
-    padding: 0 10px;
+    padding: 10px 0px 10px 10px;
 }
 
 
@@ -41,10 +40,8 @@
 }
 
 .profile__right {
-    max-width: 75%;
-    min-width: 75%;
+    width: 75%;
     padding-top: 10px;
-    text-align: center;
 }
 .profile__right__personal{
     background-color: yellow;
@@ -82,12 +79,15 @@
     display: flex;
     align-items: center;
     border: 1px solid #26262b;
-    border-radius: 8px 8px 0px 0px;
     color: rgb(200, 200, 200);
+    height: 8rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile__posts__header h3{
     margin-left: 14px;
+    font-size: 2rem;
 }
 
 /* Template palette example */
@@ -121,6 +121,8 @@
     border: 1px solid #292934;
     border-radius: 8px;
     padding: 10px;
+    width: 100%;
+    margin: 5px 0;
 }
 
 .profile__user__info a {

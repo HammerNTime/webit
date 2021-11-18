@@ -1,11 +1,34 @@
 import React from 'react'
 import { Link, useParams } from "react-router-dom"
+import { useEffect, useState } from 'react/cjs/react.development'
 import profileStyles from "./profile.module.css"
+import { getProfileById } from '../../services/profileService'
+import Template from ".././User//components/Template"
 
-function Profile({currentUser, handleLogout}) {
+function Profile({ currentUser, handleLogout, setCurrentUser }) {
+    const [user, setUser] = useState()
+    const [ templates, setTemplates] = useState()
     const { _id, avatar, handle } = currentUser || {}
-    console.log(currentUser)
-    
+  
+    useEffect(() => {
+        if (currentUser) {
+            const fetchUser = async () => {
+
+                try {
+                    const user = await getProfileById(currentUser?._id)
+                    setUser(user)
+                    setTemplates(user.templates)
+                } catch (error) {
+                    throw error
+                }
+            }
+            fetchUser()
+        }
+    }, [currentUser])
+
+    console.log(user?.templates, "current user")
+    console.log("i am templates", templates)
+
     return (
         <div className={profileStyles.profile__page}>
         <div className={profileStyles.profile__left}>
@@ -13,7 +36,7 @@ function Profile({currentUser, handleLogout}) {
                 <img src={avatar} alt="user avatar"></img>
                 <h3>{handle}</h3>
 
-                <h4>Number of templates: 2</h4>
+                    <h4>Number of templates: {user?.templates.length}</h4>
 
                 <button><Link to="/">Home</Link></button>
                 <button><Link to="/">Create a new template</Link></button>
@@ -32,29 +55,12 @@ function Profile({currentUser, handleLogout}) {
                 </div>
 
                     <div className={profileStyles.user__posts}>
-                        This will be templates created by the user
-                        <ul>
-                            <li>Template name (picture from color-palette)</li>
-                            <p>Will look something like this:</p>
-                            <h3>Template Name/ id</h3>
-                            <div className={profileStyles.template__palette}>
-                                <div style={{backgroundColor: "red"}} className={profileStyles.template__color} ><p>#23564</p></div>
-                                <div style={{backgroundColor: "yellow"}} className={profileStyles.template__color}><p>#23564</p></div>
-                                <div style={{backgroundColor: "green"}} className={profileStyles.template__color}><p>#23564</p></div>
-                                <div style={{backgroundColor: "blue"}} className={profileStyles.template__color}><p>#23564</p></div>
-                                <div style={{backgroundColor: "orange"}} className={profileStyles.template__color}><p>#23564</p></div>
-                            </div>
+                        {templates?.map((template) => (
+                        <Template template={template} backgroundColors={template.backgroundColors} textColors={template.textColors} title={template.template_title ? template.template_title : "Special Template"} id={template._id} />
+
+))}
+                          
                             
-                            <h3>Template Name/ id</h3>
-                            <div className={profileStyles.template__palette}>
-                                <div style={{backgroundColor: "yellow"}} className={profileStyles.template__color} ><p>#23564</p></div>
-                                <div style={{backgroundColor: "darkblue"}} className={profileStyles.template__color}><p>#23564</p></div>
-                                <div style={{backgroundColor: "pink"}} className={profileStyles.template__color}><p>#23564</p></div>
-                                <div style={{backgroundColor: "lightblue"}} className={profileStyles.template__color}><p>#23564</p></div>
-                                <div style={{backgroundColor: "grey"}} className={profileStyles.template__color}><p>#23564</p></div>
-                            </div>
-                            
-                        </ul>
 
                     
 
