@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import UserCard from './components/UserCard';
 import Template from "./components/Template"
+import profileStyles from ".././profile/profile.module.css"
+
 
 
 import { getProfileById } from '../../services/profileService'
@@ -44,12 +46,43 @@ function User(props) {
 
     return (
         <div>
-            <h1>This is for individual profile page</h1>
-            <UserCard handle={userData?.handle} avatar={userData?.avatar} templates={userData?.templates} />
+               <div className={profileStyles.container}>
+                <div className={profileStyles.menu}>
+                    <h1>{userData?.handle}</h1>
+                </div>
+                <div className={ profileStyles.content}>
+            <div className={profileStyles.info}>
+                        <div className={profileStyles.image_wrapper}>
+                <img src={userData?.avatar} alt="" width="200px"/>
+            </div>
+                        <h2>{userData?.templates.length} Templates</h2>
+                    </div>
+                    <div className={profileStyles.profile__templates}>
+                        
+                    <div className={profileStyles.profile__items_wrapper}>
             {templatesArray?.map((template) => (
 
-                <Template template={template} backgroundColors={template.backgroundColors} textColors={template.textColors} title={template.template_title ? template.template_title : "Special Template"} id={ template._id}/>
-            ))}
+                    <Template template={template} backgroundColors={template.backgroundColors} textColors={template.textColors} title={template.template_title ? template.template_title : "Special Template"} id={template._id} />
+                    ))}
+                    </div>
+                    </div>
+        </div>
+    </div>
+            {/* <header className={profileStyles.header}>
+                <h1>Dylan Hammer's Profile</h1>
+            </header>
+            <div className={profileStyles.profile__page}>
+                <div className={profileStyles.profile__left}>
+
+                    <UserCard handle={userData?.handle} avatar={userData?.avatar} templates={userData?.templates} />
+                    </div>
+                    <div className={profileStyles.profile__right}>
+            {templatesArray?.map((template) => (
+
+                    <Template template={template} backgroundColors={template.backgroundColors} textColors={template.textColors} title={template.template_title ? template.template_title : "Special Template"} id={template._id} />
+                    ))}
+                    </div>
+        </div> */}
         </div>
     )
 }

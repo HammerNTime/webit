@@ -1,14 +1,33 @@
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
 .profile__page {
-    height: 90vh;
+    height: auto;
     display: flex;
     overflow-y: scroll;
+    align-items: center;
+    
 }
+.main_container{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
 
 .profile__left {
     width: 25%;
     height: 100%;
-    padding: 10px 0px 10px 10px;
+    padding: 0 10px;
 }
+
+
 
 .profile__user__info {
     background: #12121b;
@@ -22,8 +41,14 @@
 }
 
 .profile__right {
-    width: 75%;
+    max-width: 75%;
+    min-width: 75%;
     padding-top: 10px;
+    text-align: center;
+}
+.profile__right__personal{
+    background-color: yellow;
+    min-width: 100%;
 }
 
 .profile__left img{
@@ -68,7 +93,7 @@
 /* Template palette example */
 .template__palette{
     width: 100%;
-    height: 100px;
+    height: 50px;
     border: 1px solid #26262b;
   border-radius: 8px 8px 0px 0px;
   background: #12121b;
@@ -88,6 +113,7 @@
     justify-content: center;
     font-size: 1.5rem;
     letter-spacing: 5px;
+    
 }
 .profile__user__info button {
     color: white;
@@ -117,3 +143,69 @@
         width: 100%;
     }
   }
+
+
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 25vh;
+    top: 0;
+    background: linear-gradient(to bottom, rgba(2, 6, 26, 0.52), rgba(9, 2, 31, 0.73)), url("https://images.unsplash.com/photo-1542744094-3a31f272c490?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2ViJTIwZGVzaWdufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.menu h1{
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5rem;
+    margin-top: 4rem;
+}
+
+.content {
+    z-index: 1;
+    position: absolute;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    width: 100%;
+    height: 100px;
+    top: 200px;
+    width: 80%;
+    height:85vh;
+    display: flex;
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.content h4{
+    color: black;
+}
+.image_wrapper{
+    border-radius: 50%;
+}
+.image_wrapper img{
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.profile__templates{
+    min-width: 90%;
+    margin-top: 1rem;
+}

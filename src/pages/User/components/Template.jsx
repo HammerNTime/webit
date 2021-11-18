@@ -14,9 +14,11 @@ function Template({ backgroundColor, textColor, template, title, id }) {
     let bg4 = template.backgroundColors[3]
     let bg5 = template.backgroundColors[4]
     return (
-        <div>
+
+            <div className={profileStyles.profile__post__container}>
+
             
-            
+
             <div className={profileStyles.user__posts}>
             <a href={`templates/${id}`}>
                        
@@ -30,10 +32,8 @@ function Template({ backgroundColor, textColor, template, title, id }) {
                             </div>
                    
 
-                    
-
+</div>
                 </div>
-        </div>
     )
 }
 
