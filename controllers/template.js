@@ -43,9 +43,10 @@ const getTemplatesByUserId = async (req, res) => {
 
 const deleteTemplate = async (req, res) => {
 	try {
-		const removedTemplate = await Template.findByIdAndDelete(req.params.id)
-		const user = await User.findById(req.user._id)
-		user.templates.remove({ _id: req.params.id })
+		const removedTemplate = await Template.findByIdAndDelete(req.params.templateId)
+    console.log(req.params)
+		const user = await User.findById(req.params.userId)
+		user.templates.remove({ _id: req.params.templateId })
 		await user.save()
 		return res.status(200).json(removedTemplate)
 	} catch (error) {
