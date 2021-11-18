@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 function UserCard({avatar, handle, templates}) {
     return (
        
-                <div className={profileStyles.profile__left}>
             <div className={profileStyles.profile__user__info}>
                 <img src={avatar} alt="user avatar"></img>
                 <h3>{handle}</h3>
@@ -19,7 +18,6 @@ function UserCard({avatar, handle, templates}) {
 
                 <button >Something here</button>
             </div>
-        </div>
      
     )
 }
