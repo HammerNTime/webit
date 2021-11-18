@@ -56,7 +56,7 @@ function Profile({ currentUser, handleLogout, setCurrentUser }) {
 
                     <div className={profileStyles.user__posts}>
                         {templates?.map((template) => (
-                        <Template template={template} backgroundColors={template.backgroundColors} textColors={template.textColors} title={template.template_title ? template.template_title : "Special Template"} id={template._id} />
+                            <Template template={template} backgroundColors={template.backgroundColors} textColors={template.textColors} title={template.template_title ? template.template_title : "Special Template"} id={template._id} userId={ currentUser._id} />
 
 ))}
                           
