@@ -1,11 +1,11 @@
 import React, { useState} from 'react'
-import { SketchPicker } from "react-color"
+// import { SketchPicker } from "react-color"
 import pickerStyles from "./pickerStyles.module.css"
 import modalStyles from "./modalStyles.module.css"
 import Modal from "react-modal"
 // import styled from 'styled-components'
 
-function StyleModal({pickedColor, backgrounds}) {
+function StyleModal({backgrounds}) {
     
     const [modalIsOpen, setModalIsOpen] = useState(false)
    
