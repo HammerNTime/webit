@@ -130,7 +130,7 @@ function App() {
 						<Profiles currentUser={currentUser} handleLogout={handleLogout} />
 					}
 				/>
-				<Route exact path="/profiles/:id" element={<User />} />
+				<Route exact path="/profiles/:id" element={<User currentUser={currentUser} />} />
 				<Route
 					exact
 					path="/templates/:id"

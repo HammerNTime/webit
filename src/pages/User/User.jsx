@@ -8,7 +8,7 @@ import profileStyles from ".././profile/profile.module.css"
 
 import { getProfileById } from '../../services/profileService'
 
-function User(props) {
+function User(props, {currentUser}) {
 
     // console.log("props", props)
     // const { id } = props.match.params
@@ -62,7 +62,7 @@ function User(props) {
                     <div className={profileStyles.profile__items_wrapper}>
             {templatesArray?.map((template) => (
 
-                    <Template template={template} backgroundColors={template.backgroundColors} textColors={template.textColors} title={template.template_title ? template.template_title : "Special Template"} id={template._id} />
+                    <Template template={template} backgroundColors={template.backgroundColors} textColors={template.textColors} title={template.template_title ? template.template_title : "Special Template"} id={template._id} currentUser={currentUser} profileId={params.id} />
                     ))}
                     </div>
                     </div>
