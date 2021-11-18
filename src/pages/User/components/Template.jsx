@@ -20,10 +20,8 @@ function Template({ backgroundColor, textColor, template, title, id }) {
             
 
             <div className={profileStyles.user__posts}>
-            <a href={`/templates/${id}`}>
-                       
-                        <h3>{ title}</h3> </a>
-                            <div className={profileStyles.template__palette}>
+                                <a href={`/templates/${id}`}><h3>{ title}</h3> </a>
+                                <div className={profileStyles.template__palette}>
                                 <div style={{backgroundColor: bg1 }} className={profileStyles.template__color} ><p>#23564</p></div>
                                 <div style={{backgroundColor: bg2}} className={profileStyles.template__color}><p>#23564</p></div>
                                 <div style={{backgroundColor: bg3}} className={profileStyles.template__color}><p>#23564</p></div>
@@ -31,7 +29,7 @@ function Template({ backgroundColor, textColor, template, title, id }) {
                                 <div style={{backgroundColor: bg5}} className={profileStyles.template__color}><p>#23564</p></div>
                             </div>
                    
-
+               
 </div>
                 </div>
     )

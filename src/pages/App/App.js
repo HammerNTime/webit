@@ -120,7 +120,7 @@ function App() {
 					exact
 					path="/profile"
 					element={
-						<Profile currentUser={currentUser} handleLogout={handleLogout} />
+						<Profile currentUser={currentUser} handleLogout={handleLogout} setCurrentUser={ setCurrentUser} />
 					}
 				/>
 				<Route
