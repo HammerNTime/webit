@@ -2,9 +2,6 @@ import React from "react"
 import { Link } from "react-router-dom"
 import "./Nav.css"
 
-// Assets
-import LogoDesktop from "../../assets/logo/logo-desktop.png"
-
 const Nav = (props) => {
 	console.log(props)
 

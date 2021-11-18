@@ -1,36 +1,58 @@
-import React, { useState} from 'react'
+import React, { useState } from "react"
 // import { SketchPicker } from "react-color"
 import pickerStyles from "./pickerStyles.module.css"
 import modalStyles from "./modalStyles.module.css"
 import Modal from "react-modal"
 // import styled from 'styled-components'
 
-function StyleModal({backgrounds}) {
-    
-    const [modalIsOpen, setModalIsOpen] = useState(false)
-   
-    
-    return (
-        <div className={pickerStyles.container}>
-            {/* <div style={{width: "200px", height: "200px", color: "white", background: `${color}` }}></div> */}
+function StyleModal({ backgrounds }) {
+	const [modalIsOpen, setModalIsOpen] = useState(false)
 
-            {/* <SketchPicker color={color} onChange={updatedColor => setColor(updatedColor.hex)} /> */}
-            <button className={pickerStyles.modal__button}onClick={() => setModalIsOpen(true)}>View Code</button>
+	return (
+		<div className={pickerStyles.container}>
+			{/* <div style={{width: "200px", height: "200px", color: "white", background: `${color}` }}></div> */}
 
-            <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
-                <div className={modalStyles.close__modal} onClick={() => setModalIsOpen(false)}>
-                <i class="fas fa-times"></i>
-                </div>
-                <div className={modalStyles.recommended}>
-                    <h2>We strongly recommend you copy <span className={modalStyles.reset__link}> <a  target="_blank" rel="noreferrer" href="https://piccalil.li/blog/a-modern-css-reset/">THIS</a>  </span>CSS Reset for general styling. </h2>
-                </div>
-               <div className={modalStyles.modal__container}>
-                   <div className={modalStyles.html__code}>  <div className={modalStyles.css__title}>
-                            <h3>HTMLCode</h3>
-                            <h3 className={modalStyles.copy__code}>Copy</h3>
-                    </div>
-                   <div className="html__code_text">
-                   <pre>{`
+			{/* <SketchPicker color={color} onChange={updatedColor => setColor(updatedColor.hex)} /> */}
+			<button
+				className={pickerStyles.modal__button}
+				onClick={() => setModalIsOpen(true)}
+			>
+				View Code
+			</button>
+
+			<Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
+				<div
+					className={modalStyles.close__modal}
+					onClick={() => setModalIsOpen(false)}
+				>
+					<i class="fas fa-times"></i>
+				</div>
+				<div className={modalStyles.recommended}>
+					<h2>
+						We strongly recommend you copy{" "}
+						<span className={modalStyles.reset__link}>
+							{" "}
+							<a
+								target="_blank"
+								rel="noreferrer"
+								href="https://piccalil.li/blog/a-modern-css-reset/"
+							>
+								THIS
+							</a>{" "}
+						</span>
+						CSS Reset for general styling.{" "}
+					</h2>
+				</div>
+				<div className={modalStyles.modal__container}>
+					<div className={modalStyles.html__code}>
+						{" "}
+						<div className={modalStyles.css__title}>
+							<h3>HTMLCode</h3>
+							<h3 className={modalStyles.copy__code}>Copy</h3>
+						</div>
+						<div className="html__code_text">
+							<pre>
+								{`
               <div class="site__container">
               <header>
                 <div class="logo">Logo</div>
@@ -64,20 +86,19 @@ function StyleModal({backgrounds}) {
               </section>
               <footer></footer>
             </div>
-                    `} </pre>
+                    `}{" "}
+							</pre>
+						</div>
+					</div>
+					<div className={modalStyles.css__code}>
+						<div className={modalStyles.css__title}>
+							<h3>CSS Code</h3>
+							<h3 className={modalStyles.copy__code}>Copy</h3>
+						</div>
 
-                   </div>
-                   </div>
-                    <div className={modalStyles.css__code}>
-                        <div className={modalStyles.css__title}>
-                            <h3>CSS Code</h3>
-                            <h3 className={modalStyles.copy__code}>Copy</h3>
-                    </div>
-
-                        <div className="css__code-text">
-                            <pre>
-                                
-                                {`
+						<div className="css__code-text">
+							<pre>
+								{`
                                 	
                                 li,
                                 a,
@@ -211,13 +232,13 @@ function StyleModal({backgrounds}) {
                                 }
                                 
                                 `}
-                            </pre>
-                        </div>
-                    </div>
-               </div>
-            </Modal>
-        </div>
-    )
+							</pre>
+						</div>
+					</div>
+				</div>
+			</Modal>
+		</div>
+	)
 }
 
 export default StyleModal
