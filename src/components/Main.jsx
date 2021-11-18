@@ -119,7 +119,7 @@ function Main({
 					className={mainStyles.site__container}
 					onClick={(e) => changeColor(pickedColor, e)}
 				>
-					<header
+					<header onMouseEnter={() => {console.log(window.document)}}
 						id="1"
 						style={{ color: textColors[1], backgroundColor: backgrounds[1] }}
 					>
