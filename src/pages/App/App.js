@@ -30,6 +30,7 @@ function App() {
 	const [color, setColor] = useState("#fff")
 	const [backgrounds, setBackgrounds] = useState([])
 	const [textColors, setTextColors] = useState([])
+	const [currentTemplate, setCurrentTemplate] = useState()
 
 	const handleSignupOrLogin = async () => {
 		const user = getUser()
@@ -130,6 +131,40 @@ function App() {
 					}
 				/>
 				<Route exact path="/profiles/:id" element={<User />} />
+				<Route
+					exact
+					path="/templates/:id"
+					element={
+						<div className={appStyles.main__container}>
+							<>
+								<Main
+									pickedColor={color}
+									backgrounds={backgrounds}
+									setBackgrounds={setBackgrounds}
+									textColors={textColors}
+									setTextColors={setTextColors}
+									currentUser={currentUser}
+									saveTemplate={saveTemplate}
+									currentTemplate={currentTemplate}
+									setCurrentTemplate={setCurrentTemplate}
+								/>
+								<div className={pickerStyles.style__container}>
+									<SketchPicker
+										color={color}
+										onChange={(c) =>
+											setColor("#" + rgbHex(c.rgb.r, c.rgb.g, c.rgb.b, c.rgb.a))
+										}
+									/>
+									<StyleModal
+										pickedColor={color}
+										backgrounds={backgrounds}
+										textColors={textColors}
+									/>
+								</div>
+							</>
+						</div>
+					}
+				/>
 			</Routes>
 		</div>
 	)

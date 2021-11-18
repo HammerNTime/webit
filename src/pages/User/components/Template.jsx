@@ -18,7 +18,7 @@ function Template({ backgroundColor, textColor, template, title, id }) {
             
             
             <div className={profileStyles.user__posts}>
-            <a href={`templates/${id}`}>
+            <a href={`/templates/${id}`}>
                        
                         <h3>{ title}</h3> </a>
                             <div className={profileStyles.template__palette}>

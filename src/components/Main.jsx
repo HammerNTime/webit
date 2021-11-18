@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+import { getTemplateById } from "../services/templateService"
 import mainStyles from "./mainStyles.module.css"
 
 function Main({
 	pickedColor,
+    setCurrentTemplate,
 	currentTemplate,
 	backgrounds,
 	setBackgrounds,
@@ -11,6 +14,7 @@ function Main({
 	saveTemplate,
 	currentUser,
 }) {
+    const params = useParams()
 	const [tool, setTool] = useState(-1)
 	const handleSubmit = (e) => {
 		e.preventDefault()
@@ -22,6 +26,16 @@ function Main({
 		}
 		saveTemplate(templateData)
 	}
+    const getTemplate = async () => {
+        let template = await getTemplateById(params?.id)
+        console.log(template)
+        setCurrentTemplate(template)
+    }
+    useEffect(() => {
+        if (params?.id) {
+            getTemplate()
+        }
+    }, [params.id]);
     const resetTemplate = () => {
         setBackgrounds([
             "transparent",
