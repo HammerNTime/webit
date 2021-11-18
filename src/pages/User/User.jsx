@@ -20,8 +20,8 @@ function User(props) {
 
     const [userData, setUserData] = useState()
     const [templatesArray, setTemplatesArray] = useState()
-    const [backgroundColors, setBackgroundColors] = useState()
-    const [ textColors, setTextColors] = useState()
+    // const [backgroundColors, setBackgroundColors] = useState()
+    // const [ textColors, setTextColors] = useState()
     
     const dylanId = "619589fafc89ff148e6ab5c5"
 
@@ -33,8 +33,8 @@ function User(props) {
                 setUserData(user)
                 setTemplatesArray(user.templates)
                 
-                setBackgroundColors(userData?.templates[0].backgroundColors)
-                setTextColors(userData?.templates[0].textColors)
+                // setBackgroundColors(userData?.templates[0].backgroundColors)
+                // setTextColors(userData?.templates[0].textColors)
             } catch (error) {
                 throw error
             }
