@@ -22,55 +22,57 @@ function Main({
 		}
 		saveTemplate(templateData)
 	}
+    const resetTemplate = () => {
+        setBackgrounds([
+            "transparent",
+            "silver",
+            "lightgreen",
+            "lightyellow",
+            "lightgreen",
+            "lightyellow",
+            "lightgreen",
+            "purple",
+            "white",
+            "black",
+            "pink",
+            "silver",
+            "blue",
+            "silver",
+            "blue",
+            "silver",
+            "gray",
+            "green",
+            "yellow",
+            "red",
+        ])
+        setTextColors([
+            "black",
+            "black",
+            "black",
+            "black",
+            "black",
+            "black",
+            "black",
+            "black",
+            "black",
+            "white",
+            "black",
+            "black",
+            "black",
+            "black",
+            "black",
+            "black",
+            "black",
+            "black",
+            "black",
+        ])    
+    }
 	useEffect(() => {
 		if (currentTemplate) {
 			setBackgrounds(currentTemplate.backgroundColors)
 			setTextColors(currentTemplate.textColors)
 		} else {
-			setBackgrounds([
-				"transparent",
-				"silver",
-				"lightgreen",
-				"lightyellow",
-				"lightgreen",
-				"lightyellow",
-				"lightgreen",
-				"purple",
-				"white",
-				"black",
-				"pink",
-				"silver",
-				"blue",
-				"silver",
-				"blue",
-				"silver",
-				"gray",
-				"green",
-				"yellow",
-				"red",
-			])
-			setTextColors([
-				"black",
-				"black",
-				"black",
-				"black",
-				"black",
-				"black",
-				"black",
-				"black",
-				"black",
-				"white",
-				"black",
-				"black",
-				"black",
-				"black",
-				"black",
-				"black",
-				"black",
-				"black",
-				"black",
-				"black",
-			])
+			resetTemplate()
 		}
 	}, [currentTemplate])
 	function changeColor(pickedColor, e) {
@@ -266,6 +268,7 @@ function Main({
 					>
 						{tool === -1 ? "Text" : "Background"}
 					</button>
+                    <button onClick={() => resetTemplate()}>Reset</button>
 					<form onSubmit={handleSubmit}>
 						<input type="text" name="title" placeholder="Template Name" />
 						<button type="submit">Save Template</button>
