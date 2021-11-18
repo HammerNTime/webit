@@ -1,9 +1,138 @@
-.container{
-    max-width: 200px;
-    border: 1px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 1rem;
+
+
+
+.wrapper{
+    width: 97%;
+	max-width: 1200px;
+	margin: 0 auto;
+	float: none;
+  text-align: center;
+  margin-top: 10rem;
 }
+.container img{
+    max-width:100%;
+  }
+  .profile_card{
+    width:280px;
+    margin:0 auto;
+    padding:40px 30px 30px;
+    background:#fff;
+    border: 5px solid rgba(255,255,255,.7);
+    text-align:center;
+    border-radius:4px;
+    transition: all 200ms ease;
+  }
+
+  .profile_card:hover{
+    box-shadow: 0px 30px 60px -5px rgba(55,55,71,0.3);
+    transform: translate3d(0,-5px,0);
+    
+  }
+
+  .profile_card header{
+    display:block;
+    margin-bottom:10px;
+  }
+  .profile_card header a{
+    width:150px;
+    height:150px;
+    display:block;
+    border-radius:100%;
+    margin:-120px auto 0;
+    box-shadow: 0 0 0 5px #82b541;
+  }
+  .profile_card header a img{
+    border-radius: 50%;
+    width:150px;
+    height:150px;
+  }
+  
+  .profile_card:hover header a, .profile_card header a:hover{
+    animation: bounceOut .4s linear; 
+    -webkit-animation: bounceOut .4s linear;
+  }
+  .profile_card header h1{
+    font-size:20px;
+    color:#444;
+    text-transform:uppercase;
+    margin-bottom:5px;
+    margin-top: 8px;
+  }
+  .profile_card header h2{
+    font-size:14px;
+    color:#acacac;
+    text-transform:uppercase;
+    margin:0;
+  }
+  
+  /*animation hover effect*/
+  @-webkit-keyframes bounceOut {
+    0% {
+      box-shadow: 0 0 0 4px #82b541;
+      opacity: 1;
+    }
+    25% {
+      box-shadow: 0 0 0 1px #82b541;
+      opacity: 1;
+    }
+    50% {
+      box-shadow: 0 0 0 7px #82b541;
+      opacity: 1;
+    }
+    75% {
+      box-shadow: 0 0 0 4px #82b541;
+      opacity: 1;
+    }
+    100% {
+      box-shadow: 0 0 0 5px #82b541;
+      opacity: 1;
+    }
+  }
+  @keyframes bounceOut {
+    0% {
+      box-shadow: 0 0 0 6px #82b541;
+      opacity: 1;
+    }
+    25% {
+      box-shadow: 0 0 0 2px #82b541;
+      opacity: 1;
+    }
+    50% {
+      box-shadow: 0 0 0 9px #82b541;
+      opacity: 1;
+    }
+    75% {
+      box-shadow: 0 0 0 3px #82b541;
+      opacity: 1;
+    }
+    100% {
+      box-shadow: 0 0 0 5px #82b541;
+      opacity: 1;
+    }
+  }
+  
+  .row{
+    display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      text-align: center;
+  }
+
+
+/* Mobile Landscape Screen Sizes */
+@media only screen and (min-width: 480px)  {
+    .user{
+        flex: 0 0 44%;
+    }
+   
+    }
+    /* Desktop screen Sizes */
+    @media only screen and (min-width: 768px) {
+        .user{
+            flex: 0 0 20%
+        }
+       
+        
+    
+    }
+    
