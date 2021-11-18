@@ -2,12 +2,12 @@ import { User } from "../models/user.js"
 import { Template } from "../models/template.js"
 
 const create = async (req, res) => {
+  console.log(req.body.added_by)
   const template = await new Template(req.body)
 	try {
 		await template.save()
 		await User.updateOne(
-			{ _id: "619493061d20a4ac3e5aa223" },
-      // { _id: req.user._id },
+      { _id: req.body.added_by},
 			{ $push: { templates: template } }
 		)
     return res.status(201).json(template)

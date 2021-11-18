@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { Switch, Route } from "react-router-dom"
 import "./App.css"
-import { Routes, Navigate, useHistory } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 
 import { getUser, logout } from "../../services/authService"
 
@@ -22,7 +21,7 @@ import { createTemplate } from "../../services/templateService"
 function App() {
 	const [currentUser, setCurrentUser] = useState()
 	const [authenticated, setAuthenticated] = useState(false)
-	const [toggleFeed, setToggleFeed] = useState(true)
+	// const [toggleFeed, setToggleFeed] = useState(true)
 	const [color, setColor] = useState("#fff")
 	const [backgrounds, setBackgrounds] = useState([])
 	const [textColors, setTextColors] = useState([])
@@ -40,7 +39,7 @@ function App() {
 		logout()
 		setCurrentUser(null)
 		setAuthenticated(false)
-		setToggleFeed(true)
+		// setToggleFeed(true)
 	}
 	const saveTemplate = async (template) => {
 		console.log(template)
