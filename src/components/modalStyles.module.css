@@ -1,6 +1,7 @@
 .modal__container {
 	display: flex;
 	flex-direction: column;
+	word-wrap: break-word;
 }
 .close__modal {
 	display: flex;
@@ -23,16 +24,14 @@
 .html__title {
 	display: flex;
 	justify-content: space-between;
-	margin: 0 3rem;
+	margin: 1rem 3rem 0;
 	border-bottom: 1px solid white;
 	padding-bottom: 1rem;
 }
 
-.copy__code {
-	cursor: pointer;
-}
 .copy__code:hover {
-	color: rgb(228, 224, 224);
+	cursor: pointer;
+	color: rgb(210, 58, 58);
 }
 .recommended {
 	display: flex;
