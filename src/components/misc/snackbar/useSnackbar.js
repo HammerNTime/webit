@@ -8,7 +8,7 @@ export function useSnackbar() {
         if (isActive === true) {
             setTimeout(() => {
                 setIsActive(false);
-            }, 3000);
+            }, 1000);
         }
     }, [isActive]);
 

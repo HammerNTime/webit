@@ -1,4 +1,5 @@
 import React from "react"
+import styles from "./templateButtons.module.css"
 
 function TemplateButtons({
 	pickedColor,
@@ -44,7 +45,7 @@ function TemplateButtons({
 	}
 	return (
 		<div>
-			<button
+			<button className={tool === -1 ? styles.background : styles.text}
 				onClick={() => {
 					setTool(tool * -1)
 				}}
@@ -54,7 +55,10 @@ function TemplateButtons({
 			<button onClick={() => resetTemplate()}>Reset</button>
 			{currentUser ? (
 				<form onSubmit={handleSubmit}>
+					<div>
 					<input type="text" name="title" placeholder="Template Name" />
+
+					</div>
 					<button type="submit">Save Template</button>
 				</form>
 			) : (
