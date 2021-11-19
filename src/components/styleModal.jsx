@@ -5,6 +5,7 @@ import "./prism.css"
 import pickerStyles from "./pickerStyles.module.css"
 import modalStyles from "./modalStyles.module.css"
 import Modal from "react-modal"
+import { Snackbar } from "./misc/snackbar/snackbar"
 // import styled from 'styled-components'
 
 function StyleModal({ backgrounds, textColors }) {
