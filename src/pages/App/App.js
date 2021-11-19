@@ -23,6 +23,7 @@ import SignIn from "../../pages/Auth/SignIn"
 //Services
 import { getUser, logout } from "../../services/authService"
 import { createTemplate } from "../../services/templateService"
+import TemplateButtons from "../../components/templateButtons/templateButtons"
 
 function App() {
 	const [currentUser, setCurrentUser] = useState()
@@ -31,6 +32,7 @@ function App() {
 	const [backgrounds, setBackgrounds] = useState([])
 	const [textColors, setTextColors] = useState([])
 	const [currentTemplate, setCurrentTemplate] = useState()
+	const [tool, setTool] = useState(-1)
 
 	const handleSignupOrLogin = async () => {
 		const user = getUser()
@@ -87,6 +89,8 @@ function App() {
 									setTextColors={setTextColors}
 									currentUser={currentUser}
 									saveTemplate={saveTemplate}
+									tool={tool}
+									setTool={setTool}
 								/>
 								<div className={appStyles.pickerStyle__container}>
 									<SketchPicker
@@ -95,6 +99,19 @@ function App() {
 											setColor("#" + rgbHex(c.rgb.r, c.rgb.g, c.rgb.b, c.rgb.a))
 										}
 									/>
+									<div>
+									<TemplateButtons pickedColor={color}
+									backgrounds={backgrounds}
+									setBackgrounds={setBackgrounds}
+									textColors={textColors}
+									setTextColors={setTextColors}
+									currentUser={currentUser}
+									saveTemplate={saveTemplate}
+									currentTemplate={currentTemplate}
+									setCurrentTemplate={setCurrentTemplate}
+									tool={tool}
+									setTool={setTool} />
+									</div>
 									<StyleModal
 										pickedColor={color}
 										backgrounds={backgrounds}
@@ -155,6 +172,8 @@ function App() {
 									saveTemplate={saveTemplate}
 									currentTemplate={currentTemplate}
 									setCurrentTemplate={setCurrentTemplate}
+									tool={tool}
+									setTool={setTool}
 								/>
 								<div className={pickerStyles.style__container}>
 									<SketchPicker
@@ -163,6 +182,19 @@ function App() {
 											setColor("#" + rgbHex(c.rgb.r, c.rgb.g, c.rgb.b, c.rgb.a))
 										}
 									/>
+									<div>
+									<TemplateButtons pickedColor={color}
+									backgrounds={backgrounds}
+									setBackgrounds={setBackgrounds}
+									textColors={textColors}
+									setTextColors={setTextColors}
+									currentUser={currentUser}
+									saveTemplate={saveTemplate}
+									currentTemplate={currentTemplate}
+									setCurrentTemplate={setCurrentTemplate}
+									tool={tool}
+									setTool={setTool} />
+									</div>
 									<StyleModal
 										pickedColor={color}
 										backgrounds={backgrounds}
