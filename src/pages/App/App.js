@@ -88,7 +88,7 @@ function App() {
 									currentUser={currentUser}
 									saveTemplate={saveTemplate}
 								/>
-								<div className={pickerStyles.style__container}>
+								<div className={appStyles.pickerStyle__container}>
 									<SketchPicker
 										color={color}
 										onChange={(c) =>
