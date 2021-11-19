@@ -8,7 +8,7 @@ import Template from ".././User//components/Template"
 function Profile({ currentUser, handleLogout, setCurrentUser }) {
 	const [user, setUser] = useState()
 	const [templates, setTemplates] = useState()
-	const { _id, avatar, handle } = currentUser || {}
+	const { _id, avatar, handle } = currentUser
 
 	useEffect(() => {
 		if (currentUser) {
