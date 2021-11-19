@@ -45,7 +45,7 @@ function App() {
 		setAuthenticated(false)
 	}
 	const saveTemplate = async (template) => {
-		console.log(template)
+		if(!currentUser) return
 		try {
 			createTemplate(template)
 		} catch (error) {
@@ -120,7 +120,11 @@ function App() {
 					exact
 					path="/profile"
 					element={
-						<Profile currentUser={currentUser} handleLogout={handleLogout} setCurrentUser={ setCurrentUser} />
+						<Profile
+							currentUser={currentUser}
+							handleLogout={handleLogout}
+							setCurrentUser={setCurrentUser}
+						/>
 					}
 				/>
 				<Route
@@ -130,7 +134,11 @@ function App() {
 						<Profiles currentUser={currentUser} handleLogout={handleLogout} />
 					}
 				/>
-				<Route exact path="/profiles/:id" element={<User currentUser={currentUser} />} />
+				<Route
+					exact
+					path="/profiles/:id"
+					element={<User currentUser={currentUser} />}
+				/>
 				<Route
 					exact
 					path="/templates/:id"

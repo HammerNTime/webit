@@ -5,7 +5,7 @@ import mainStyles from "./mainStyles.module.css"
 
 function Main({
 	pickedColor,
-    setCurrentTemplate,
+	setCurrentTemplate,
 	currentTemplate,
 	backgrounds,
 	setBackgrounds,
@@ -14,7 +14,7 @@ function Main({
 	saveTemplate,
 	currentUser,
 }) {
-    const params = useParams()
+	const params = useParams()
 	const [tool, setTool] = useState(-1)
 	const handleSubmit = (e) => {
 		e.preventDefault()
@@ -26,65 +26,65 @@ function Main({
 		}
 		saveTemplate(templateData)
 	}
-    const getTemplate = async () => {
-        let template = await getTemplateById(params?.id)
-        console.log(template)
-        setCurrentTemplate(template)
-    }
-    useEffect(() => {
-        if (params?.id) {
-            getTemplate()
-        }
-    }, [params.id]);
-    const resetTemplate = () => {
-        window.location.reload(false)
-    }
-    const initTemplate = () => {
-        // window.location.reload(false)
-        setBackgrounds([
-            "transparent",
-            "silver",
-            "lightgreen",
-            "lightyellow",
-            "lightgreen",
-            "lightyellow",
-            "lightgreen",
-            "purple",
-            "white",
-            "black",
-            "pink",
-            "silver",
-            "blue",
-            "silver",
-            "blue",
-            "silver",
-            "gray",
-            "green",
-            "yellow",
-            "red",
-        ])
-        setTextColors([
-            "black",
-            "black",
-            "black",
-            "black",
-            "black",
-            "black",
-            "black",
-            "black",
-            "black",
-            "white",
-            "black",
-            "black",
-            "black",
-            "black",
-            "black",
-            "black",
-            "black",
-            "black",
-            "black",
-        ])    
-    }
+	const getTemplate = async () => {
+		let template = await getTemplateById(params?.id)
+		console.log(template)
+		setCurrentTemplate(template)
+	}
+	useEffect(() => {
+		if (params?.id) {
+			getTemplate()
+		}
+	}, [params.id])
+	const resetTemplate = () => {
+		window.location.reload(false)
+	}
+	const initTemplate = () => {
+		// window.location.reload(false)
+		setBackgrounds([
+			"white",
+			"silver",
+			"lightgreen",
+			"lightyellow",
+			"lightgreen",
+			"lightyellow",
+			"lightgreen",
+			"purple",
+			"white",
+			"black",
+			"pink",
+			"silver",
+			"blue",
+			"silver",
+			"blue",
+			"silver",
+			"gray",
+			"green",
+			"yellow",
+			"red",
+		])
+		setTextColors([
+			"black",
+			"black",
+			"black",
+			"black",
+			"black",
+			"black",
+			"black",
+			"black",
+			"black",
+			"white",
+			"black",
+			"black",
+			"black",
+			"black",
+			"black",
+			"black",
+			"black",
+			"black",
+			"black",
+		])
+	}
 	useEffect(() => {
 		if (currentTemplate) {
 			setBackgrounds(currentTemplate?.backgroundColors)
@@ -112,14 +112,14 @@ function Main({
 	return (
 		<>
 			<div>
-                {currentTemplate ? <div>{currentTemplate.template_title}</div> : ""}
+				{currentTemplate ? <div>{currentTemplate.template_title}</div> : ""}
 				<div
 					id="0"
 					style={{ backgroundColor: backgrounds[0] }}
 					className={mainStyles.site__container}
 					onClick={(e) => changeColor(pickedColor, e)}
 				>
-					<header onMouseEnter={() => {console.log(window.document)}}
+					<header
 						id="1"
 						style={{ color: textColors[1], backgroundColor: backgrounds[1] }}
 					>
@@ -282,11 +282,15 @@ function Main({
 					>
 						{tool === -1 ? "Color Text" : "Color Background"}
 					</button>
-                    <button onClick={() => resetTemplate()}>Reset</button>
-					<form onSubmit={handleSubmit}>
-						<input type="text" name="title" placeholder="Template Name" />
-						<button type="submit">Save Template</button>
-					</form>
+					<button onClick={() => resetTemplate()}>Reset</button>
+					{currentUser ? (
+						<form onSubmit={handleSubmit}>
+							<input type="text" name="title" placeholder="Template Name" />
+							<button type="submit">Save Template</button>
+						</form>
+					) : (
+						""
+					)}
 				</div>
 			</div>
 		</>
