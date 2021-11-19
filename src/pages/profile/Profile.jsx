@@ -7,7 +7,6 @@ import Template from "../User/components/Template"
 function Profile({ currentUser, handleLogout, setCurrentUser }) {
 	const [user, setUser] = useState()
 	const [templates, setTemplates] = useState()
-	const { _id, avatar, handle } = currentUser
 
 	useEffect(() => {
 		if (currentUser) {
@@ -33,8 +32,8 @@ function Profile({ currentUser, handleLogout, setCurrentUser }) {
 			<>
 <div className={profileStyles.profile__left}>
 				<div className={profileStyles.profile__user__info}>
-					<img src={avatar} alt="user avatar"></img>
-					<h3>{handle}</h3>
+					<img src={currentUser.avatar} alt="user currentUser.avatar"></img>
+					<h3>{currentUser?.handle}</h3>
 
 					<h4>Number of templates: {user?.templates.length}</h4>
 
