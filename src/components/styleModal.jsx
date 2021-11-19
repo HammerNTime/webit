@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from "react"
+import { Snackbar } from './misc/snackbar/snackbar'
+import { useSnackbar } from './misc/snackbar/useSnackbar';
 import Prism from "prismjs"
 import "./prism.css"
 // import { SketchPicker } from "react-color"
 import pickerStyles from "./pickerStyles.module.css"
 import modalStyles from "./modalStyles.module.css"
 import Modal from "react-modal"
-import { Snackbar } from "./misc/snackbar/snackbar"
 // import styled from 'styled-components'
 
 function StyleModal({ backgrounds, textColors }) {
 	const [modalIsOpen, setModalIsOpen] = useState(false)
 	const [cssText, setCssText] = useState("")
-
+  const { isActive, message, openSnackBar } = useSnackbar();
+  const _showSnackbarHandler = () => {
+    openSnackBar("Copied");
+  }
 	const copyCss = async () => {
+    _showSnackbarHandler()
 		await navigator.clipboard.writeText(cssText)
-		alert("Text copied")
+		// alert("Text copied")
 	}
 	const copyHtml = async () => {
+    _showSnackbarHandler()
 		await navigator.clipboard.writeText(htmlText)
-		alert("Text copied")
+		// alert("Text copied")
 	}
   useEffect(() => {
     setTimeout(() => {
@@ -260,6 +266,7 @@ function StyleModal({ backgrounds, textColors }) {
 					</div>
 				</div>
 			</Modal>
+      <Snackbar isActive = {isActive} message = {message}/>
 		</div>
 	)
 }
