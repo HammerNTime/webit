@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react"
+import Prism from "prismjs"
+import "./prism.css"
 // import { SketchPicker } from "react-color"
 import pickerStyles from "./pickerStyles.module.css"
 import modalStyles from "./modalStyles.module.css"
@@ -153,6 +155,7 @@ function StyleModal({ backgrounds, textColors }) {
     }
     
     `)
+		Prism.highlightAll()
 	}, [backgrounds, textColors])
 	let htmlText = `
   <div class="site__container">
@@ -229,13 +232,19 @@ function StyleModal({ backgrounds, textColors }) {
 						{" "}
 						<div className={modalStyles.css__title}>
 							<h3>HTMLCode</h3>
-							<h3 className={modalStyles.copy__code} onClick={() => {
+							<h3
+								className={modalStyles.copy__code}
+								onClick={() => {
 									copyHtml()
-								}}>Copy</h3>
+								}}
+							>
+								Copy
+							</h3>
 						</div>
 						<div className="html__code_text">
 							<pre>
-								{`
+								<code className="language-html">
+									{`
               <div class="site__container">
               <header>
                 <div class="logo">Logo</div>
@@ -270,6 +279,7 @@ function StyleModal({ backgrounds, textColors }) {
               <footer></footer>
             </div>
                     `}{" "}
+								</code>
 							</pre>
 						</div>
 					</div>
@@ -288,7 +298,8 @@ function StyleModal({ backgrounds, textColors }) {
 
 						<div className="css__code-text">
 							<pre>
-								{`
+								<code className="language-css">
+									{`
                                 	
                                 li,
                                 a,
@@ -422,6 +433,7 @@ function StyleModal({ backgrounds, textColors }) {
                                 }
                                 
                                 `}
+								</code>
 							</pre>
 						</div>
 					</div>
