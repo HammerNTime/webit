@@ -17,7 +17,7 @@ function Main({
 	setTool,
 }) {
 	const params = useParams()
-
+	const [targetId, setTargetId] = useState(-1)
 	const getTemplate = async () => {
 		let template = await getTemplateById(params?.id)
 		console.log(template)
@@ -92,6 +92,8 @@ function Main({
 			"black",
 			"black",
 			"black",
+			"black",
+			"gray"
 		])
 	}
 	useEffect(() => {
@@ -103,9 +105,11 @@ function Main({
 		}
 	}, [currentTemplate])
 	function changeColor(pickedColor, e) {
+		setTargetId(targetId * -1)
 		if (e.target.id === "100") {
 			return
 		} else {
+			console.log(e.target.style)
 			if (tool === -1) {
 				backgrounds[e.target.id] = pickedColor
 				setBackgrounds(backgrounds)
@@ -344,12 +348,12 @@ function Main({
 								<path
 									transform="translate(0, -20)"
 									d="M0,10 c80,-22 240,0 350,18 c90,17 260,7.5 350,-20 v50 h-700"
-									fill="#CEB964"
+									fill={targetId === -1 ? backgrounds[26] : backgrounds[26]}
 									id="26"
 								/>
 								<path
 									d="M0,10 c80,-18 230,-12 350,7 c80,13 260,17 350,-5 v100 h-700z"
-									fill="#00273F"
+									fill={targetId === -1 ? backgrounds[27] : backgrounds[27]}
 									id="27"
 								/>
 							</svg>
