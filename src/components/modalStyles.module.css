@@ -1,6 +1,6 @@
 .modal__container {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
 }
 .close__modal {
 	display: flex;
@@ -11,12 +11,14 @@
 
 .html__code,
 .css__code {
-	width: 48%;
+	width: 99%;
 	background-color: black;
 	color: white;
 	font-size: 16px;
+	overflow-y: scroll;
+	height: 500px;
+	margin-bottom: 20px;
 }
-
 .css__title,
 .html__title {
 	display: flex;
