@@ -17,6 +17,7 @@ const Nav = (props) => {
 
 				{props.currentUser ? (
 					<div className="auth-container-signed_in">
+						<Link to="/profiles">Profiles</Link>
 						<div>
 							<Link to="/profile">
 								<img id="avatar" src={props.currentUser.avatar} alt="" />
@@ -31,6 +32,7 @@ const Nav = (props) => {
 					</div>
 				) : (
 					<div className="auth-container">
+						<Link to="/profiles">Profiles</Link>
 						<Link to="/signup">Sign Up</Link>
 						<Link to="/signin">Sign In</Link>
 					</div>

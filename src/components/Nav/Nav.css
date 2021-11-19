@@ -26,8 +26,17 @@
 	justify-content: center;
 	align-items: center;
 }
+.auth-container-signed_in a {
+    color: white;
+	text-decoration: none;
+	list-style: none;
+	margin: 0 2rem;
+}
 .auth-container-signed_in > div {
 	margin-left: 10px;
+}
+.auth-container-signed_in div i {
+    cursor: pointer;
 }
 .auth-container a {
 	color: white;

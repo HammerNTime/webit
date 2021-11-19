@@ -6,14 +6,14 @@ function userCard({ avatar, name, templates, id, currentUser }) {
 		<div className={userStyles.container}>
 			<div className={userStyles.profile_card}>
 				<header>
-					<a href={currentUser._id === id ? `/profile` : `/profiles/${id}`}>
+					<a href={currentUser?._id === id ? `/profile` : `/profiles/${id}`}>
 						<img src={avatar} size="200" alt="profile" />
 					</a>
 
 					<h1>{name}</h1>
 
 					<h2>
-						{templates.length > 1
+						{templates?.length > 1
 							? templates.length + " templates"
 							: templates.length === 1
 							? templates.length + " template"
