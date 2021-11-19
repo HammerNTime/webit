@@ -24,7 +24,7 @@ const Nav = (props) => {
 						</div>
 						<div>
 							<i
-								className="fas fa-sign-out-alt"
+								className="fas fa-sign-out-alt fa-lg"
 								onClick={(e) => props.handleLogout()}
 							></i>
 						</div>
