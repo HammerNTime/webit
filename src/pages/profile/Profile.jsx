@@ -1,36 +1,35 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
-import { useEffect, useState } from "react/cjs/react.development"
 import profileStyles from "./profile.module.css"
 import { getProfileById } from "../../services/profileService"
 import Template from "../User/components/Template"
 
 function Profile({ currentUser, handleLogout, setCurrentUser }) {
-	const [user, setUser] = useState()
-	const [templates, setTemplates] = useState()
-	const { _id, avatar, handle } = currentUser
+	// const [user, setUser] = useState()
+	// const [templates, setTemplates] = useState()
+	// const { _id, avatar, handle } = currentUser
 
-	useEffect(() => {
-		if (currentUser) {
-			const fetchUser = async () => {
-				try {
-					const user = await getProfileById(currentUser?._id)
-					setUser(user)
-					setTemplates(user.templates)
-				} catch (error) {
-					throw error
-				}
-			}
-			fetchUser()
-		}
-	}, [currentUser])
+	// useEffect(() => {
+	// 	if (currentUser) {
+	// 		const fetchUser = async () => {
+	// 			try {
+	// 				const user = await getProfileById(currentUser?._id)
+	// 				setUser(user)
+	// 				setTemplates(user.templates)
+	// 			} catch (error) {
+	// 				throw error
+	// 			}
+	// 		}
+	// 		fetchUser()
+	// 	}
+	// }, [currentUser])
 
-	console.log(user?.templates, "current user")
-	console.log("i am templates", templates)
+	// console.log(user?.templates, "current user")
+	// console.log("i am templates", templates)
 
 	return (
 		<div className={profileStyles.profile__page}>
-			<div className={profileStyles.profile__left}>
+			{/* <div className={profileStyles.profile__left}>
 				<div className={profileStyles.profile__user__info}>
 					<img src={avatar} alt="user avatar"></img>
 					<h3>{handle}</h3>
@@ -72,7 +71,8 @@ function Profile({ currentUser, handleLogout, setCurrentUser }) {
 						))}
 					</div>
 				</div>
-			</div>
+			</div> */}
+			HI
 		</div>
 	)
 }
