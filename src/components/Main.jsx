@@ -405,7 +405,7 @@ function Main({
 								}}
 							></section>
 						</main>
-						<footer style={{height: "130px"}}>
+						<footer style={{height: "140px"}}>
 							<svg
 								id="28"
 								backgroundColor="blue"
