@@ -164,7 +164,7 @@ function Main({
 	return (
 		<>
 			<div>
-				{currentTemplate ? <div>{currentTemplate.template_title}</div> : ""}
+				{/* {currentTemplate ? <div>{currentTemplate.template_title}</div> : ""} */}
 				<div
 					id="0"
 					style={{ backgroundColor: backgrounds[0] }}
