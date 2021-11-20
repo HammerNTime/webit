@@ -18,7 +18,7 @@ function Hero() {
         </div>
             <div className={homeStyles.img_intro}>
                     <LandingAnimation animData={hero}  />
-                {/* <img src="https://media4.giphy.com/media/Uwj2CxFJs8ZyM/giphy-downsized-large.gif" alt="" width="800px" height="800px"/> */}
+                
         </div>
         <img src="" alt="" className="wave"/>
     </section>

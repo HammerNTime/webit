@@ -1,5 +1,21 @@
+:root{
+    --text: #D8D7D2;
+    --title-text: #D8D7D2;
+    --yellow: #FEBB40;
+    --orange: #DB5A28;
+    --red: #BE621B;
+    /* --background: url(./layered-waves-haikei\ \(2\).svg) ; */
+    --summary-text: #5b5b88;
+    /* --logo: url(./logo.png); */
+    --black : #201251;
+    --nav-color: #12121B;
+    --header-font: 3rem;
+    --white: #C6F4FF;
+    
+   
+}
 .nav-bar {
-	background: #12121b;
+	background: var(--black);
 }
 #avatar {
 	height: 50px;
@@ -46,7 +62,7 @@
 }
 .fa-fill-drip,
 .logo-color {
-	color: #7450e9;
+	color: var(--orange);
 }
 .logo {
 	display: flex;

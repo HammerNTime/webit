@@ -80,7 +80,7 @@ function App() {
 			<Routes>
 				<Route
 					exact
-					path="/"
+					path="/design"
 					element={
 						<div className={appStyles.main__container}>
 							<>
@@ -137,7 +137,7 @@ function App() {
 				/>
 						<Route
 					exact
-					path="/landing"
+					path="/"
 					element={ <Landing/>}
 				/>
 				<Route

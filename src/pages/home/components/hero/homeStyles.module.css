@@ -46,20 +46,22 @@
 .landing h2{
     font-size: 8rem;
     color: var(--black);
+    display: block;
 
 }
 .landing h3{
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: lighter;
     color: var(--summary-text);
 }
 .landing button{
-    padding: 2rem 4.6rem;
+    padding: 1.4rem 3.4rem;
     font-size: 2rem;
     border: none;
     background: var(--orange);
     color: var(--text);
     margin: 2rem 0;
+    align-self: center;
 }
 
 .landing button:hover{
@@ -75,3 +77,24 @@
 }
 
 
+
+@media only screen and (min-width: 1920px) {
+    .landing h2{
+        font-size: 8rem;
+       
+    
+    }
+    .landing h3{
+        font-size: 3rem;
+        font-weight: lighter;
+        
+    }
+    .landing button{
+        padding: 2rem 4.6rem;
+        font-size: 2rem;
+        border: none;
+        background: var(--orange);
+        color: var(--text);
+        margin: 2rem 0;
+    }
+}

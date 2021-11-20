@@ -18,6 +18,7 @@ const Nav = (props) => {
 				{props.currentUser ? (
 					<div className="auth-container-signed_in">
 						<Link to="/profiles">Profiles</Link>
+						<Link to="/Design">Profiles</Link>
 						<div>
 							<Link to="/profile">
 								<img id="avatar" src={props.currentUser.avatar} alt="" />
