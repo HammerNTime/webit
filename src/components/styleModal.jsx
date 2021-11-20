@@ -9,9 +9,10 @@ import modalStyles from "./modalStyles.module.css"
 import Modal from "react-modal"
 // import styled from 'styled-components'
 
-function StyleModal({ backgrounds, textColors }) {
+function StyleModal({ backgrounds, textColors, targetId }) {
 	const [modalIsOpen, setModalIsOpen] = useState(false)
 	const [cssText, setCssText] = useState("")
+  const [htmlText, setHtmlText] = useState("")
 	const { isActive, message, openSnackBar } = useSnackbar()
 	const _showSnackbarHandler = () => {
 		openSnackBar("Copied")
@@ -32,6 +33,98 @@ function StyleModal({ backgrounds, textColors }) {
 		}, 0)
 	}, [cssText, modalIsOpen])
 	useEffect(() => {
+    setHtmlText(`  <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="temp.css" />
+        <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+          crossorigin="anonymous"
+        />
+    
+        <title>Document</title>
+      </head>
+      <body>
+        <div class="full_site_container">
+          <div class="main_site">
+            <nav>
+              <div class="logo">Logo</div>
+              <input type="checkbox" id="checkbox" />
+              <label for="checkbox" id="icon">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </label>
+              <ul>
+                <li><a id="link1" href="#" class="active">Link</a></li>
+                <li><a id="link2" href="#">Link2</a></li>
+                <li><a id="link3" href="#">Link3</a></li>
+                <li><a id="link4" href="#">Link4</a></li>
+                <li><a id="link5" href="#">Link5</a></li>
+              </ul>
+            </nav>
+            <header class="wrapper">
+              <h3>Banner Title Text Here</h3>
+              <div class="header_container">
+                <div id="header_section1 class="header_section">
+                  <i class="fas fa-question-circle"></i>
+                  <h3>Some Text Here.</h3>
+                </div>
+                <div id="header_section2 class="header_section">
+                  <i class="fas fa-question-circle"></i>
+                  <h3>Some Text Here.</h3>
+                </div>
+                <div id="header_section3 class="header_section">
+                  <i class="fas fa-question-circle"></i>
+                  <h3>Some Text Here.</h3>
+                </div>
+                <div id="header_section4 class="header_section">
+                  <i class="fas fa-question-circle"></i>
+                  <h3>Some Text Here.</h3>
+                </div>
+              </div>
+            </header>
+            <main class="wrapper section_wrapper">
+              <section class="section_left"></section>
+              <section class="section_right"></section>
+            </main>
+            <footer>
+              <svg
+                viewBox="0 -20 700 110"
+                width="100%"
+                height="150"
+                preserveAspectRatio="none"
+              >
+                <path
+                  transform="translate(0, -20)"
+                  d="M0,10 c80,-22 240,0 350,18 c90,17 260,7.5 350,-20 v50 h-700"
+                  fill=${targetId === -1 ? backgrounds[26] : backgrounds[26]}
+                />
+                <path
+                  d="M0,10 c80,-18 230,-12 350,7 c80,13 260,17 350,-5 v100 h-700z"
+                  fill=${targetId === -1 ? backgrounds[27] : backgrounds[27]}
+                />
+              </svg>
+            </footer>
+          </div>
+        </div>
+      </body>
+    </html>`)
 		setCssText(
     `    * {
       margin: 0;
@@ -166,7 +259,7 @@ function StyleModal({ backgrounds, textColors }) {
       flex-direction: column;
     }
     header {
-      background: #18283b;
+      background: ${backgrounds[8]};
     
       margin-top: 1rem;
       text-align: center;
@@ -205,14 +298,15 @@ function StyleModal({ backgrounds, textColors }) {
     /* Desktop screen service */
     @media only screen and (min-width: 768px) {
       header {
-        background: #18283b;
+        background: ${backgrounds[8]};
         width: 100%;
         height: 30vh;
         margin-top: 1rem;
         text-align: center;
       }
       header h3 {
-        color: white;
+        color: ${textColors[9]};
+        background-color: ${backgrounds[9]};
         margin: 1rem 0;
       }
       .header_container {
@@ -223,23 +317,64 @@ function StyleModal({ backgrounds, textColors }) {
       .header_section {
         width: 300px;
         height: 200px;
-        background: white;
         margin: 0 1rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
       }
-      .header_section h3 {
-        color: black;
+      #header_section1 {
+        background: ${backgrounds[11]};
+      }
+      #header_section2 {
+        background: ${backgrounds[14]};
+      }
+      #header_section3 {
+        background: ${backgrounds[17]};
+      }
+      #header_section4 {
+        background: ${backgrounds[20]};
+      }
+      #header_section1 h3 {
+        color: ${textColors[13]};
+        background: ${backgrounds[13]};
+      }
+      #header_section2 h3 {
+        color: ${textColors[16]};
+        background: ${backgrounds[16]};
+      }
+      #header_section3 h3 {
+        color: ${textColors[19]};
+        background: ${backgrounds[19]};
+      }
+      #header_section4 h3 {
+        color: ${textColors[22]};
+        background: ${backgrounds[22]};
       }
       .header_section i {
         font-size: 5rem;
+      }
+      #header_section1 i {
+        color: ${textColors[12]};
+        background: ${backgrounds[11]};
+      }
+      #header_section2 i {
+        color: ${textColors[15]};
+        background: ${backgrounds[14]};
+      }
+      #header_section3 i {
+        color: ${textColors[18]};
+        background: ${backgrounds[17]};
+      }
+      #header_section4 i {
+        color: ${textColors[21]};
+        background: ${backgrounds[20]};
       }
       .section_wrapper {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        background: ${backgrounds[23]};
       }
       .section_wrapper section {
         width: 49%;
@@ -248,15 +383,15 @@ function StyleModal({ backgrounds, textColors }) {
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
       }
       .section_left {
-        background: rgb(255, 255, 255);
+        background: ${backgrounds[24]};
       }
       .section_right {
-        background: rgb(255, 255, 255);
+        background: ${backgrounds[25]};
       }
       footer {
         position: absolute;
         width: 100%;
-        height: 100px;
+        height: 130px;
         bottom: 0;
         overflow: hidden;
         display: block;
@@ -265,98 +400,7 @@ function StyleModal({ backgrounds, textColors }) {
 		)
 		Prism.highlightAll()
 	}, [backgrounds, textColors, modalIsOpen])
-	let htmlText = `  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="temp.css" />
-      <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-        crossorigin="anonymous"
-      />
-  
-      <title>Document</title>
-    </head>
-    <body>
-      <div class="full_site_container">
-        <div class="main_site">
-          <nav>
-            <div class="logo">Logo</div>
-            <input type="checkbox" id="checkbox" />
-            <label for="checkbox" id="icon">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </label>
-            <ul>
-              <li><a href="#" class="active">Link</a></li>
-              <li><a href="#">Link2</a></li>
-              <li><a href="#">Link3</a></li>
-              <li><a href="#">Link4</a></li>
-              <li><a href="#">Link5</a></li>
-            </ul>
-          </nav>
-          <header class="wrapper">
-            <h3>Banner Title Text Here</h3>
-            <div class="header_container">
-              <div class="header_section">
-                <i class="fas fa-question-circle"></i>
-                <h3>Some Text Here.</h3>
-              </div>
-              <div class="header_section">
-                <i class="fas fa-question-circle"></i>
-                <h3>Some Text Here.</h3>
-              </div>
-              <div class="header_section">
-                <i class="fas fa-question-circle"></i>
-                <h3>Some Text Here.</h3>
-              </div>
-              <div class="header_section">
-                <i class="fas fa-question-circle"></i>
-                <h3>Some Text Here.</h3>
-              </div>
-            </div>
-          </header>
-          <main class="wrapper section_wrapper">
-            <section class="section_left"></section>
-            <section class="section_right"></section>
-          </main>
-          <footer>
-            <svg
-              viewBox="0 -20 700 110"
-              width="100%"
-              height="110"
-              preserveAspectRatio="none"
-            >
-              <path
-                transform="translate(0, -20)"
-                d="M0,10 c80,-22 240,0 350,18 c90,17 260,7.5 350,-20 v50 h-700"
-                fill="#CEB964"
-              />
-              <path
-                d="M0,10 c80,-18 230,-12 350,7 c80,13 260,17 350,-5 v100 h-700z"
-                fill="#00273F"
-              />
-            </svg>
-          </footer>
-        </div>
-      </div>
-    </body>
-  </html>`
+
 	return (
 		<div className={pickerStyles.container}>
 			{/* <div style={{width: "200px", height: "200px", color: "white", background: `${color}` }}></div> */}
