@@ -170,6 +170,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .menu {
@@ -199,10 +200,10 @@
     position: absolute;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     width: 100%;
-    height: 100px;
     top: 200px;
     width: 80%;
-    height: fit-content;
+    min-height: 50vh;
+    max-height: 75vh;
     padding-bottom: 50px;
     display: flex;
     color: black;
@@ -234,10 +235,19 @@
 }
 
 .profile__templates{
+    z-index: 0;
     min-width: 90%;
     margin-top: 1rem;
+    overflow-y: scroll;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+    /* this will hide the scrollbar in internet explorers */
+    -ms-overflow-style: none;
 }
-
+.profile__templates::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
 
 /* modal */
 .modal buttons{
