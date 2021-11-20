@@ -1,0 +1,80 @@
+:root{
+    --text: #D8D7D2;
+    --title-text: #D8D7D2;
+    --yellow: #FEBB40;
+    --orange: #DB5A28;
+    --red: #BE621B;
+    /* --background: url(./layered-waves-haikei\ \(2\).svg) ; */
+    --summary-text: #5b5b88;
+    /* --logo: url(./logo.png); */
+    --black : #201251;
+    --nav-color: #12121B;
+    --header-font: 3rem;
+    --white: #C6F4FF;
+    
+   
+}
+.full_container{
+    max-width: 100vw;
+    max-height: 100vh;
+    background-color: var(--nav-color);
+}
+
+.wrapper {
+	width: 97%;
+	max-width: 1200px;
+	margin: 0 auto;
+	float: none;
+}
+.wrapper h1{
+    color: var(--white);
+    font-size: var(--header-font);
+}
+
+.section_container img{
+  max-width: 100%;
+  object-fit: contain;
+
+}
+.section_container{
+    background-color: var(--orange);
+
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section_container h3{
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+.section_container p{
+    font-size: 17px;
+}
+/* Desktop screen Sizes */
+@media only screen and (min-width: 768px) {
+	.section_container{
+    display: flex;
+    justify-content: space-between;
+    height: calc((100vh / 3) - 2rem);
+  background-color: transparent;
+  color: var(--white);
+  }
+  .left_side{
+   width: 50%;
+
+  }
+  .right_side{
+    width: 50%
+  }
+  .left_image img{
+    float: left;
+  }
+  .right_image img{
+    float: right;
+  }
+
+	
+
+}
+

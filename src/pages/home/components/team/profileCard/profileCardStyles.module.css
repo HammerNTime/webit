@@ -1,0 +1,179 @@
+:root{
+    --text: #D8D7D2;
+    --title-text: #D8D7D2;
+    --yellow: #FEBB40;
+    --orange: #DB5A28;
+    --red: #BE621B;
+    /* --background: url(./layered-waves-haikei\ \(2\).svg) ; */
+    --summary-text: #5b5b88;
+    /* --logo: url(./logo.png); */
+    --black : #201251;
+    --nav-color: #12121B;
+    --header-font: 3rem;
+    --white: #C6F4FF;
+    
+   
+}
+
+.page_container{
+min-height: 100vh;
+min-width: 100vw;
+display: flex;
+justify-content: center;
+flex-direction: column;
+background: url("../background.svg") no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+text-align: center;
+}
+.page_container h2{
+    color: var(--black);
+    font-size: var(--header-font);
+    letter-spacing: 1px;
+    margin: 2rem 0;
+
+}
+
+.card_container{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 8rem;
+    min-height: 50vh;
+    margin-top: rem;
+    
+
+
+}
+
+.profile_card{
+    margin: 0 auto;
+    max-width: 500px;
+    min-width: 500px;
+    position: relative;
+    display: flex;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 50px;
+    border-top-left-radius: 50px;
+    padding: 2rem;
+    
+
+background: rgba( 255, 255, 255, 0.15 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 8px );
+-webkit-backdrop-filter: blur( 8px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    
+
+}
+
+  
+
+.profile_img img{
+   object-fit: contain;
+
+
+}
+
+.image{
+    filter: blur(1.8px);
+}
+.image:hover{
+    filter: blur(0);
+}
+.info{
+    /* position: absolute;
+   margin-top: 17rem; */
+  
+   background-color: var(--black);
+   color: var(--white);
+   width: 100%;
+   
+}
+
+
+
+
+.modal_wrapper{
+    width: 90vw;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+   
+}
+
+.modal_container{
+    display: flex;
+    background:  linear-gradient(
+        rgba(27, 16, 16, 0.85), 
+        rgba(17, 12, 12, 0.85)
+    ),url("https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* width: 100vw; */
+    /* height: 100vh; */
+}
+.left_bar{
+    background-color: yellow;
+    height: 100vh;
+    width: 10rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.left_bar i{
+    color: rgb(65, 23, 23);
+    font-size: 2rem;
+}
+
+.info_container{
+    width: calc(90vw - 10rem);
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10rem;
+    color: white;
+    font-size: 1.3rem;
+
+}
+
+.modal_info{
+    margin-left: 4rem;
+}
+
+.modal_info span{
+    opacity: .5;
+}
+.modal_socials a{
+text-decoration: none;
+cursor: pointer;
+}
+.modal_socials a i{
+    color: white;
+    margin: 5px;
+}
+
+.modal_info h3{
+    font-size: 2.2em;
+    font-family:cursive;
+
+}
+.modal_info p{
+    margin: 1rem 0;
+}
+
+.mine{
+    background-color: #7a69b6;
+}

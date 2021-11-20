@@ -1,0 +1,77 @@
+:root{
+    --text: #D8D7D2;
+    --title-text: #D8D7D2;
+    --yellow: #FEBB40;
+    --orange: #DB5A28;
+    --red: #BE621B;
+    /* --background: url(./layered-waves-haikei\ \(2\).svg) ; */
+    --summary-text: #5b5b88;
+    /* --logo: url(./logo.png); */
+    --black : #201251;
+    --nav-color: #12121B;
+    
+   
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+          transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+
+}
+
+
+
+
+.full_container{
+    width: 100vw;
+    height: 100vh;
+
+}
+.landing{
+    height:calc(100vh - 80px) ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    
+}
+
+.lottie{
+    width: 800px;
+    height: 800px;
+}
+.landing h2{
+    font-size: 8rem;
+    color: var(--black);
+
+}
+.landing h3{
+    font-size: 3rem;
+    font-weight: lighter;
+    color: var(--summary-text);
+}
+.landing button{
+    padding: 2rem 4.6rem;
+    font-size: 2rem;
+    border: none;
+    background: var(--orange);
+    color: var(--text);
+    margin: 2rem 0;
+}
+
+.landing button:hover{
+    background: transparent;
+    border: 2px solid var(--orange);
+    cursor: pointer;
+}
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+
+

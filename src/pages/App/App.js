@@ -19,6 +19,7 @@ import Profiles from "../profiles/profiles"
 import User from "../User/User"
 import SignUp from "../../pages/Auth/SignUp"
 import SignIn from "../../pages/Auth/SignIn"
+import Landing from "../home/Landing"
 
 //Services
 import { getUser, logout } from "../../services/authService"
@@ -134,7 +135,11 @@ function App() {
 					path="/signin"
 					element={<SignIn handleSignupOrLogin={handleSignupOrLogin} />}
 				/>
-
+						<Route
+					exact
+					path="/landing"
+					element={ <Landing/>}
+				/>
 				<Route
 					exact
 					path="/signup"
