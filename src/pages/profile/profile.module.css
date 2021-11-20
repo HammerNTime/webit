@@ -1,295 +1,300 @@
-.header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .profile__page {
-    height: 90vh;
-    display: flex;
-    overflow-y: scroll;
-    
+	height: 90vh;
+	display: flex;
+	overflow-y: scroll;
 }
-.main_container{
-    display: flex;
-    flex-direction: row;
+.main_container {
+	display: flex;
+	flex-direction: row;
 }
-
-
-
 
 .profile__left {
-    width: 25%;
-    height: 100%;
-    padding: 10px 0px 10px 10px;
+	width: 25%;
+	height: 100%;
+	padding: 10px 0px 10px 10px;
 }
 
-
-
 .profile__user__info {
-    background: #12121b;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #26262b;
-    border-radius: 8px;
-    padding: 20px;
+	background: #12121b;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid #26262b;
+	border-radius: 8px;
+	padding: 20px;
 }
 
 .profile__right {
-    width: 75%;
-    padding-top: 10px;
+	width: 75%;
+	padding-top: 10px;
 }
-.profile__right__personal{
-    background-color: yellow;
-    min-width: 100%;
-}
-
-.profile__left img{
-    width: 200px;
-    border: 2px solid #4d4d63;
-    border-radius: 100%;
-    margin-bottom: 25px;
+.profile__right__personal {
+	background-color: yellow;
+	min-width: 100%;
 }
 
-.profile__left h3, h4{
-    color: rgb(220, 220, 220);
+.profile__left img {
+	width: 200px;
+	border: 2px solid #4d4d63;
+	border-radius: 100%;
+	margin-bottom: 25px;
 }
 
-.profile__left h4{
-    opacity: .75;
+.profile__left h3,
+h4 {
+	color: rgb(220, 220, 220);
+}
+
+.profile__left h4 {
+	opacity: 0.75;
 }
 
 .profile__post__container {
-    padding: 0px 10px 0px 10px;
-    margin-bottom: 15px;
+	padding: 0px 10px 0px 10px;
+	margin-bottom: 15px;
 }
 
 .sub__container {
-    padding: 0px 10px 0px 10px;
+	padding: 0px 10px 0px 10px;
 }
 
 .profile__posts__header {
-    background: #12121b;
-    box-sizing: border-box;
-    height: 50px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    border: 1px solid #26262b;
-    color: rgb(200, 200, 200);
-    height: 8rem;
-    justify-content: center;
-    align-items: center;
+	background: #12121b;
+	box-sizing: border-box;
+	height: 50px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	border: 1px solid #26262b;
+	color: rgb(200, 200, 200);
+	height: 8rem;
+	justify-content: center;
+	align-items: center;
 }
 
-.profile__posts__header h3{
-    margin-left: 14px;
-    font-size: 2rem;
+.profile__posts__header h3 {
+	margin-left: 14px;
+	font-size: 2rem;
 }
 
 /* Template palette example */
-.template__palette{
-    width: 100%;
-    height: 50px;
-    border: 1px solid #26262b;
-  border-radius: 8px 8px 0px 0px;
-  background: #12121b;
-  /* display: flex;
+.template__palette {
+	width: 100%;
+	height: 50px;
+	border: 1px solid #26262b;
+	border-radius: 8px 8px 0px 0px;
+	background: #12121b;
+	/* display: flex;
   justify-content: space-between;
   align-items: center; */
-  display: grid;
-  grid-auto-flow: column;
-  cursor: pointer;
-
-
-
+	display: grid;
+	grid-auto-flow: column;
+	cursor: pointer;
 }
-.template__color{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    letter-spacing: 5px;
-    min-width: 100px;
-    outline: 1px solid black;
-    
+.template__color {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1rem;
+	letter-spacing: 5px;
+	min-width: 100px;
+	outline: 1px solid black;
 }
 .profile__user__info button {
-    color: white;
-    background: #0B0B12;
-    border: 1px solid #292934;
-    border-radius: 8px;
-    padding: 10px;
-    width: 100%;
-    margin: 5px 0;
+	color: white;
+	background: #0b0b12;
+	border: 1px solid #292934;
+	border-radius: 8px;
+	padding: 10px;
+	width: 100%;
+	margin: 5px 0;
 }
 
 .profile__user__info a {
-    text-decoration: none;
-    color: white;
+	text-decoration: none;
+	color: white;
 }
 
-.delete__title{
-    display: flex;
-    width: inherit;
-    justify-content: space-between;
-    margin: 0 1rem;
+.delete__title {
+	display: flex;
+	width: inherit;
+	justify-content: space-between;
+	margin: 0 1rem;
+}
+.user__posts {
+    max-height: 80vh;
+    overflow-y: scroll;
+    overflow: -moz-scrollbars-none;
+	scrollbar-width: none;
+	/* this will hide the scrollbar in internet explorers */
+	-ms-overflow-style: none;
+}
+.user__posts::-webkit-scrollbar {
+	width: 0;
+	display: none;
+}
+.user__posts:first-child {
+    margin-top: 10px;
 }
 
-  @media only screen and (max-width: 850px) {
-    .profile-page{
-        display: flex;
-        flex-direction: column;
-    }
 
-    .profile__left {
-        width: 100%;
-        height: auto;
-    }
-    
-    .profile__right {
-        width: 100%;
-    }
-  }
+@media only screen and (max-width: 850px) {
+	.profile-page {
+		display: flex;
+		flex-direction: column;
+	}
 
+	.profile__left {
+		width: 100%;
+		height: auto;
+	}
+
+	.profile__right {
+		width: 100%;
+	}
+}
 .user__posts a {
-    text-decoration: none;
-    color: black;
+	text-decoration: none;
+	color: black;
 }
 
 .user__posts a:hover {
-    color: red;
+	color: red;
 }
 
 .container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 }
 
 .menu {
-    z-index: 0;
-    position: absolute;
-    width: 100%;
-    height: 25vh;
-    top: 0;
-    background: linear-gradient(to bottom, rgba(2, 6, 26, 0.52), rgba(9, 2, 31, 0.73)), url("https://images.unsplash.com/photo-1542744094-3a31f272c490?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2ViJTIwZGVzaWdufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    object-fit: cover;
+	z-index: 0;
+	position: absolute;
+	width: 100%;
+	height: 25vh;
+	top: 0;
+	background: linear-gradient(
+			to bottom,
+			rgba(2, 6, 26, 0.52),
+			rgba(9, 2, 31, 0.73)
+		),
+		url("https://images.unsplash.com/photo-1542744094-3a31f272c490?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2ViJTIwZGVzaWdufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80")
+			no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	object-fit: cover;
 }
 
-.menu h1{
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 5rem;
-    margin-top: 4rem;
+.menu h1 {
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 5rem;
+	margin-top: 4rem;
 }
 
 .content {
-    z-index: 1;
-    position: absolute;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    width: 100%;
-    top: 200px;
-    width: 80%;
-    min-height: 50vh;
-    max-height: 75vh;
-    padding-bottom: 50px;
-    display: flex;
-    color: black;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+	z-index: 1;
+	position: absolute;
+	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+	width: 100%;
+	top: 200px;
+	width: 80%;
+	min-height: 50vh;
+	max-height: 75vh;
+	padding-bottom: 50px;
+	display: flex;
+	color: black;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-.content h4{
-    color: black;
+.content h4 {
+	color: black;
 }
 .content a {
-    text-decoration: none;
-    color: black;
+	text-decoration: none;
+	color: black;
 }
 .content a:hover {
-    color: red;
-    transition: none;
+	color: red;
+	transition: none;
 }
-.image_wrapper{
-    border-radius: 50%;
+.image_wrapper {
+	border-radius: 50%;
 }
-.image_wrapper img{
-    max-width: 100%;
-    object-fit: contain;
-    border-radius: 50%;
+.image_wrapper img {
+	max-width: 100%;
+	object-fit: contain;
+	border-radius: 50%;
 }
 
-.profile__templates{
-    z-index: 0;
-    min-width: 90%;
-    margin-top: 1rem;
-    overflow-y: scroll;
-    overflow: -moz-scrollbars-none;
-    scrollbar-width: none;
-    /* this will hide the scrollbar in internet explorers */
-    -ms-overflow-style: none;
+.profile__templates {
+	z-index: 0;
+	min-width: 90%;
+	margin-top: 1rem;
+	overflow-y: scroll;
+	overflow: -moz-scrollbars-none;
+	scrollbar-width: none;
+	/* this will hide the scrollbar in internet explorers */
+	-ms-overflow-style: none;
 }
 .profile__templates::-webkit-scrollbar {
-    width: 0;
-    display: none;
+	width: 0;
+	display: none;
 }
 
 /* modal */
-.modal buttons{
-    display: flex;
-    justify-content: space-between;
+.modal buttons {
+	display: flex;
+	justify-content: space-between;
 }
 
-.delete_button{
-   
-    width: 120px;
-    padding: 0;
-    margin: 10px 20px 10px 0;
-    font-weight: 600;
-    text-align: center;
-    line-height: 50px;
-    color: rgb(0, 0, 0);
-    border-radius: 5px;
-    transition: all 0.2s ;
-    cursor: pointer;
-    background-color: red;
-
+.delete_button {
+	width: 120px;
+	padding: 0;
+	margin: 10px 20px 10px 0;
+	font-weight: 600;
+	text-align: center;
+	line-height: 50px;
+	color: rgb(0, 0, 0);
+	border-radius: 5px;
+	transition: all 0.2s;
+	cursor: pointer;
+	background-color: red;
 }
 
-.delete_button:hover{
-    background-color: rgb(184, 0, 0);
-    background-color: #b9cbce;
-
+.delete_button:hover {
+	background-color: rgb(184, 0, 0);
+	background-color: #b9cbce;
 }
-.cancel_button{
-    width: 120px;
-    padding: 0;
-    margin: 10px 20px 10px 0;
-    font-weight: 600;
-    text-align: center;
-    line-height: 50px;
-    color: rgb(0, 0, 0);
-    border-radius: 5px;
-    transition: all 0.2s ;
-    cursor: pointer;
-    background-color: green;
+.cancel_button {
+	width: 120px;
+	padding: 0;
+	margin: 10px 20px 10px 0;
+	font-weight: 600;
+	text-align: center;
+	line-height: 50px;
+	color: rgb(0, 0, 0);
+	border-radius: 5px;
+	transition: all 0.2s;
+	cursor: pointer;
+	background-color: green;
 }
-.cancel_button:hover{
-    background-color: rgb(0, 80, 0);
-
+.cancel_button:hover {
+	background-color: rgb(0, 80, 0);
 }
