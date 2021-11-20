@@ -33,6 +33,8 @@ function App() {
 	const [textColors, setTextColors] = useState([])
 	const [currentTemplate, setCurrentTemplate] = useState()
 	const [tool, setTool] = useState(-1)
+	const [targetId, setTargetId] = useState(-1)
+
 
 	const handleSignupOrLogin = async () => {
 		const user = getUser()
@@ -91,6 +93,8 @@ function App() {
 									saveTemplate={saveTemplate}
 									tool={tool}
 									setTool={setTool}
+									targetId={targetId}
+									setTargetId={setTargetId}
 								/>
 								<div className={appStyles.pickerStyle__container}>
 									<SketchPicker
@@ -110,12 +114,15 @@ function App() {
 									currentTemplate={currentTemplate}
 									setCurrentTemplate={setCurrentTemplate}
 									tool={tool}
-									setTool={setTool} />
+									setTool={setTool}
+									 />
 									</div>
 									<StyleModal
 										pickedColor={color}
 										backgrounds={backgrounds}
 										textColors={textColors}
+										targetId={targetId}
+
 									/>
 								</div>
 							</>
@@ -174,6 +181,8 @@ function App() {
 									setCurrentTemplate={setCurrentTemplate}
 									tool={tool}
 									setTool={setTool}
+									targetId={targetId}
+									setTargetId={setTargetId}
 								/>
 								<div className={pickerStyles.style__container}>
 									<SketchPicker
@@ -193,12 +202,14 @@ function App() {
 									currentTemplate={currentTemplate}
 									setCurrentTemplate={setCurrentTemplate}
 									tool={tool}
-									setTool={setTool} />
+									setTool={setTool}
+									 />
 									</div>
 									<StyleModal
 										pickedColor={color}
 										backgrounds={backgrounds}
 										textColors={textColors}
+										targetId={targetId}
 									/>
 								</div>
 							</>

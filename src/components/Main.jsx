@@ -15,9 +15,10 @@ function Main({
 	currentUser,
 	tool,
 	setTool,
+	targetId,
+	setTargetId,
 }) {
 	const params = useParams()
-	const [targetId, setTargetId] = useState(-1)
 	const getTemplate = async () => {
 		let template = await getTemplateById(params?.id)
 		console.log(template)
@@ -38,10 +39,10 @@ function Main({
 			"#18283b",
 			"transparent",
 			" #0075ff",
-			"lightgreen",
-			"lightyellow",
-			"lightgreen",
-			"purple",
+			"transparent",
+			"transparent",
+			"transparent",
+			"transparent",
 			"#18283b",
 			"transparent",
 			"transparent",
@@ -93,7 +94,7 @@ function Main({
 			"black",
 			"black",
 			"black",
-			"gray"
+			"gray",
 		])
 	}
 	useEffect(() => {
@@ -106,11 +107,46 @@ function Main({
 	}, [currentTemplate])
 	function changeColor(pickedColor, e) {
 		setTargetId(targetId * -1)
-		if (e.target.id === "100") {
+		console.log(e.target.id)
+		if (e.target.id === "100" || e.target.id === "28") {
 			return
 		} else {
 			console.log(e.target.style)
 			if (tool === -1) {
+				console.log(backgrounds)
+				if (e.target.id === "12") {
+					document.getElementById("11").style.backgroundColor = pickedColor
+					backgrounds["11"] = pickedColor
+					setBackgrounds(backgrounds)
+					return
+				}
+				if (e.target.id === "15") {
+					document.getElementById("14").style.backgroundColor = pickedColor
+					backgrounds[14] = pickedColor
+					setBackgrounds(backgrounds)
+					return
+				}
+				if (e.target.id === "18") {
+					document.getElementById("17").style.backgroundColor = pickedColor
+					backgrounds[17] = pickedColor
+					setBackgrounds(backgrounds)
+					return
+				}
+				if (e.target.id === "21") {
+					document.getElementById("20").style.backgroundColor = pickedColor
+					backgrounds[20] = pickedColor
+					setBackgrounds(backgrounds)
+					return
+				}
+				if (e.target.id === "" || !e.target.id) {
+					document.getElementById("0").style.backgroundColor = pickedColor
+					backgrounds[0] = pickedColor
+					if (e.target.id || e.target.id !== ""){
+						backgrounds[e.target.id] = pickedColor
+					}
+					setBackgrounds(backgrounds)
+					return
+				}
 				backgrounds[e.target.id] = pickedColor
 				setBackgrounds(backgrounds)
 				e.target.style.backgroundColor = pickedColor
@@ -122,6 +158,7 @@ function Main({
 		}
 	}
 
+
 	return (
 		<>
 			<div>
@@ -132,7 +169,7 @@ function Main({
 					className={mainStyles.full_site_container}
 					onClick={(e) => changeColor(pickedColor, e)}
 				>
-					<div className={mainStyles.main_site}>
+					<div className={mainStyles.main_site} id="0">
 						<nav
 							className={mainStyles.nav}
 							id="1"
@@ -164,22 +201,50 @@ function Main({
 									</a>
 								</li>
 								<li>
-									<a href="#" id="4" style={{ color: textColors[4] }}>
+									<a
+										href="#"
+										id="4"
+										style={{
+											color: textColors[4],
+											backgroundColor: backgrounds[4],
+										}}
+									>
 										Link2
 									</a>
 								</li>
 								<li>
-									<a href="#" id="5" style={{ color: textColors[5] }}>
+									<a
+										href="#"
+										id="5"
+										style={{
+											color: textColors[5],
+											backgroundColor: backgrounds[5],
+										}}
+									>
 										Link3
 									</a>
 								</li>
 								<li>
-									<a href="#" id="6" style={{ color: textColors[6] }}>
+									<a
+										href="#"
+										id="6"
+										style={{
+											color: textColors[6],
+											backgroundColor: backgrounds[6],
+										}}
+									>
 										Link4
 									</a>
 								</li>
 								<li>
-									<a href="#" id="7" style={{ color: textColors[7] }}>
+									<a
+										href="#"
+										id="7"
+										style={{
+											color: textColors[7],
+											backgroundColor: backgrounds[7],
+										}}
+									>
 										Link5
 									</a>
 								</li>
@@ -221,7 +286,7 @@ function Main({
 										class="fas fa-question-circle"
 										id="12"
 										style={{
-											backgroundColor: backgrounds[100],
+											backgroundColor: backgrounds[12],
 											color: textColors[12],
 										}}
 									></i>
@@ -248,7 +313,7 @@ function Main({
 										class="fas fa-question-circle"
 										id="15"
 										style={{
-											backgroundColor: backgrounds[100],
+											backgroundColor: backgrounds[15],
 											color: textColors[15],
 										}}
 									></i>{" "}
@@ -275,7 +340,7 @@ function Main({
 										class="fas fa-question-circle"
 										id="18"
 										style={{
-											backgroundColor: backgrounds[100],
+											backgroundColor: backgrounds[18],
 											color: textColors[18],
 										}}
 									></i>{" "}
@@ -302,7 +367,7 @@ function Main({
 										class="fas fa-question-circle"
 										id="21"
 										style={{
-											backgroundColor: backgrounds[100],
+											backgroundColor: backgrounds[21],
 											color: textColors[21],
 										}}
 									></i>{" "}
@@ -319,7 +384,7 @@ function Main({
 							</div>
 						</header>
 						<main
-							className={`${mainStyles.wrapper} ${mainStyles.section_wrapper} id="23" style={{backgroundColor: backgrounds[23], color: textColors[23]}}`}
+							className={`${mainStyles.wrapper} ${mainStyles.section_wrapper}`} id="23" style={{backgroundColor: backgrounds[23], color: textColors[23]}}
 						>
 							<section
 								className={mainStyles.section_left}
@@ -338,11 +403,13 @@ function Main({
 								}}
 							></section>
 						</main>
-						<footer>
+						<footer style={{height: "130px"}}>
 							<svg
+								id="28"
+								backgroundColor="blue"
 								viewBox="0 -20 700 110"
 								width="100%"
-								height="110"
+								height="150"
 								preserveAspectRatio="none"
 							>
 								<path
