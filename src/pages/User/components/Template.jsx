@@ -22,7 +22,7 @@ function Template({
 	let bg3 = template.backgroundColors[3]
 	let bg4 = template.backgroundColors[8]
 	let bg5 = template.backgroundColors[11]
-	console.log(bg1)
+	
 	const handleDeleteTemplate = async () => {
 		try {
 			const deletedTemplate = await deleteTemplate(id, userId)
