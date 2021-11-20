@@ -24,10 +24,12 @@ const Nav = (props) => {
 							</Link>
 						</div>
 						<div>
-							<i
-								className="fas fa-sign-out-alt fa-lg"
-								onClick={(e) => props.handleLogout()}
-							></i>
+							<Link to="/">
+								<i
+									className="fas fa-sign-out-alt fa-lg"
+									onClick={(e) => props.handleLogout()}
+								></i>
+							</Link>
 						</div>
 					</div>
 				) : (
