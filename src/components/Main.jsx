@@ -63,6 +63,8 @@ function Main({
 			"transparent",
 			"white",
 			"white",
+			"white",
+			"white",
 		])
 		setTextColors([
 			"black",
