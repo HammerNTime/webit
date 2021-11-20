@@ -35,7 +35,7 @@ function Main({
 	const initTemplate = () => {
 		// window.location.reload(false)
 		setBackgrounds([
-			"white",
+			"#d7dde5",
 			"#18283b",
 			"transparent",
 			" #0075ff",
@@ -63,8 +63,8 @@ function Main({
 			"transparent",
 			"white",
 			"white",
-			"white",
-			"white",
+			"#CEB964",
+			"#00273F",
 		])
 		setTextColors([
 			"black",
@@ -89,7 +89,7 @@ function Main({
 			// 19
 			"black",
 			"black",
-			"yellow",
+			"#c2c203",
 			"black",
 			// 23
 			"black",
