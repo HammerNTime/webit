@@ -35,96 +35,64 @@ function StyleModal({ backgrounds, textColors, targetId }) {
 	useEffect(() => {
     setHtmlText(`  <!DOCTYPE html>
     <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="temp.css" />
-        <link
-          rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-          crossorigin="anonymous"
-        />
-    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="temp.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+        
         <title>Document</title>
-      </head>
-      <body>
+    </head>
+    <body>
         <div class="full_site_container">
-          <div class="main_site">
-            <nav>
-              <div class="logo">Logo</div>
-              <input type="checkbox" id="checkbox" />
-              <label for="checkbox" id="icon">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  ></path>
-                </svg>
-              </label>
-              <ul>
-                <li><a id="link1" href="#" class="active">Link</a></li>
-                <li><a id="link2" href="#">Link2</a></li>
-                <li><a id="link3" href="#">Link3</a></li>
-                <li><a id="link4" href="#">Link4</a></li>
-                <li><a id="link5" href="#">Link5</a></li>
-              </ul>
+    <div class="main_site" >
+        <nav>
+                <div class="logo">Logo</div>
+                <input type="checkbox" id="checkbox">
+                <label for="checkbox" id="icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </label>
+                <ul>
+                    <li><a id="link1" href="#" class="active">Link</a></li>
+                    <li><a id="link2" href="#">Link2</a></li>
+                    <li><a id="link3" href="#">Link3</a></li>
+                    <li><a id="link4" href="#">Link4</a></li>
+                    <li><a id="link5" href="#">Link5</a></li>
+                </ul>
             </nav>
-            <header class="wrapper">
-              <h3>Banner Title Text Here</h3>
-              <div class="header_container">
-                <div id="header_section1 class="header_section">
-                  <i class="fas fa-question-circle"></i>
-                  <h3>Some Text Here.</h3>
-                </div>
-                <div id="header_section2 class="header_section">
-                  <i class="fas fa-question-circle"></i>
-                  <h3>Some Text Here.</h3>
-                </div>
-                <div id="header_section3 class="header_section">
-                  <i class="fas fa-question-circle"></i>
-                  <h3>Some Text Here.</h3>
-                </div>
-                <div id="header_section4 class="header_section">
-                  <i class="fas fa-question-circle"></i>
-                  <h3>Some Text Here.</h3>
-                </div>
-              </div>
-            </header>
-            <main class="wrapper section_wrapper">
-              <section class="section_left"></section>
-              <section class="section_right"></section>
-            </main>
-            <footer>
-              <svg
-                viewBox="0 -20 700 110"
-                width="100%"
-                height="150"
-                preserveAspectRatio="none"
-              >
-                <path
-                  transform="translate(0, -20)"
-                  d="M0,10 c80,-22 240,0 350,18 c90,17 260,7.5 350,-20 v50 h-700"
-                  fill=${targetId === -1 ? backgrounds[26] : backgrounds[26]}
-                />
-                <path
-                  d="M0,10 c80,-18 230,-12 350,7 c80,13 260,17 350,-5 v100 h-700z"
-                  fill=${targetId === -1 ? backgrounds[27] : backgrounds[27]}
+          <header class="wrapper"> 
+              <h3> Banner Title Text Here </h3>
+            <div class = "header_container"> 
+              <div id="header_section1" class = "header_section"> <i class="fas fa-question-circle"></i>
+            <h3>Some Text Here.</h3></div>
+                    <div id="header_section2" class = "header_section"> <i class="fas fa-question-circle"></i> <h3>Some Text Here.</h3></div>
+                    <div id="header_section3" class = "header_section"> <i class="fas fa-question-circle"></i> <h3>Some Text Here.</h3></div>
+              <div id="header_section4" class = "header_section"> <i class="fas fa-question-circle"></i> <h3>Some Text Here.</h3> </div> 
+            </div>
+          
+         </header>
+          <main class="wrapper section_wrapper">
+            <section class=" section_left">
+             
+            </section>
+             <section class="section_right">
+              
+             </section>
+        
+          </main>
+          <footer>
+            <svg viewBox="0 -20 700 110" width="100%" height="150" preserveAspectRatio="none">
+                <path transform="translate(0, -20)" d="M0,10 c80,-22 240,0 350,18 c90,17 260,7.5 350,-20 v50 h-700" fill=${targetId === -1 ? `"${backgrounds[26]}"` : `"${backgrounds[26]}"`}/>
+                <path d="M0,10 c80,-18 230,-12 350,7 c80,13 260,17 350,-5 v100 h-700z" fill=${targetId === -1 ? `"${backgrounds[27]}"` : `"${backgrounds[27]}"`}
                 />
               </svg>
-            </footer>
-          </div>
+          </footer>
         </div>
-      </body>
-    </html>`)
+      
+    </div>
+        
+    </body>`)
 		setCssText(
     `    * {
       margin: 0;
