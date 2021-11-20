@@ -19,9 +19,10 @@ function Template({
 
 	let bg1 = template.backgroundColors[0]
 	let bg2 = template.backgroundColors[1]
-	let bg3 = template.backgroundColors[2]
-	let bg4 = template.backgroundColors[3]
-	let bg5 = template.backgroundColors[4]
+	let bg3 = template.backgroundColors[3]
+	let bg4 = template.backgroundColors[8]
+	let bg5 = template.backgroundColors[11]
+	console.log(bg1)
 	const handleDeleteTemplate = async () => {
 		try {
 			const deletedTemplate = await deleteTemplate(id, userId)
@@ -32,7 +33,33 @@ function Template({
 			throw error
 		}
 	}
-
+	function invertColor(hex, bw) {
+		if (hex.indexOf("#") === 0) {
+			hex = hex.slice(1)
+		}
+		// convert 3-digit hex to 6-digits.
+		if (hex.length === 3) {
+			hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2]
+		}
+		var r = parseInt(hex.slice(0, 2), 16),
+			g = parseInt(hex.slice(2, 4), 16),
+			b = parseInt(hex.slice(4, 6), 16)
+		if (bw) {
+			// https://stackoverflow.com/a/3943023/112731
+			return r * 0.299 + g * 0.587 + b * 0.114 > 186 ? "#000000" : "#FFFFFF"
+		}
+		// invert color components
+		r = (255 - r).toString(16)
+		g = (255 - g).toString(16)
+		b = (255 - b).toString(16)
+		// pad each with zeros and return
+		return "#" + padZero(r) + padZero(g) + padZero(b)
+	}
+	function padZero(str, len) {
+		len = len || 2
+		var zeros = new Array(len).join("0")
+		return (zeros + str).slice(-len)
+	}
 	return (
 		<div className={profileStyles.profile__post__container}>
 			<div className={profileStyles.user__posts}>
@@ -111,34 +138,34 @@ function Template({
 
 				<div className={profileStyles.template__palette}>
 					<div
-						style={{ backgroundColor: bg1 }}
+						style={{ backgroundColor: bg1, color: `${invertColor(bg1.slice(0,7))}` }}
 						className={profileStyles.template__color}
 					>
-						<p>#23564</p>
+						<p>{bg1.slice(0,6)}</p>
 					</div>
 					<div
-						style={{ backgroundColor: bg2 }}
+						style={{ backgroundColor: bg2, color: `${invertColor(bg2.slice(0,7))}` }}
 						className={profileStyles.template__color}
 					>
-						<p>#23564</p>
+						<p>{bg2.slice(0,6)}</p>
 					</div>
 					<div
-						style={{ backgroundColor: bg3 }}
+						style={{ backgroundColor: bg3, color: `${invertColor(bg3.slice(0,7))}` }}
 						className={profileStyles.template__color}
 					>
-						<p>#23564</p>
+						<p>{bg3.slice(0,6)}</p>
 					</div>
 					<div
-						style={{ backgroundColor: bg4 }}
+						style={{ backgroundColor: bg4, color: `${invertColor(bg4.slice(0,7))}` }}
 						className={profileStyles.template__color}
 					>
-						<p>#23564</p>
+						<p>{bg4.slice(0,6)}</p>
 					</div>
 					<div
-						style={{ backgroundColor: bg5 }}
+						style={{ backgroundColor: bg5, color: `${invertColor(bg5.slice(0,7))}` }}
 						className={profileStyles.template__color}
 					>
-						<p>#23564</p>
+						<p>{bg5.slice(0,6)}</p>
 					</div>
 				</div>
 			</div>
