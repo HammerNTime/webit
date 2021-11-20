@@ -106,6 +106,7 @@ function Main({
 	}, [currentTemplate])
 	function changeColor(pickedColor, e) {
 		setTargetId(targetId * -1)
+		console.log(e.target.id)
 		if (e.target.id === "100") {
 			return
 		} else {
@@ -132,7 +133,7 @@ function Main({
 					className={mainStyles.full_site_container}
 					onClick={(e) => changeColor(pickedColor, e)}
 				>
-					<div className={mainStyles.main_site}>
+					<div className={mainStyles.main_site} id="0">
 						<nav
 							className={mainStyles.nav}
 							id="1"
