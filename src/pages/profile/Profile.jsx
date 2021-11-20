@@ -3,7 +3,8 @@ import { Link, useParams } from "react-router-dom"
 import profileStyles from "./profile.module.css"
 import { getProfileById } from "../../services/profileService"
 import Template from "../User/components/Template"
-
+import loadingData from "../../assets/animation/lf30_editor_hrnlpjer.json"
+import LoadingAnimation from "../../components/misc/LoadingAnimation"
 function Profile({ currentUser, handleLogout, setCurrentUser }) {
 	const [user, setUser] = useState()
 	const [templates, setTemplates] = useState()
@@ -77,7 +78,7 @@ function Profile({ currentUser, handleLogout, setCurrentUser }) {
 					</div>
 				</>
 			) : (
-				"Loading Your Profile"
+				<LoadingAnimation loadingData={loadingData}/>
 			)}
 		</div>
 	)
