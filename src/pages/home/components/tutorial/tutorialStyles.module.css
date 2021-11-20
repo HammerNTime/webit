@@ -16,8 +16,9 @@
 }
 .full_container{
     max-width: 100vw;
-    max-height: 100vh;
-    background-color: var(--nav-color);
+    max-height: 110vh;
+    background-color: var(--black);
+    height: 120VH;
 }
 
 .wrapper {
@@ -51,6 +52,10 @@
 .section_container p{
     font-size: 17px;
 }
+
+.section_info{
+  margin-top: 1rem;
+}
 /* Desktop screen Sizes */
 @media only screen and (min-width: 768px) {
 	.section_container{
@@ -74,7 +79,9 @@
     float: right;
   }
 
-	
+	.section_info{
+    margin-top: 1rem;
+  }
 
 }
 

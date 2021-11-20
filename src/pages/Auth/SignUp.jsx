@@ -5,6 +5,7 @@ import "./Auth.css"
 // Assets
 import cat from "../../assets/avatars/cat.png"
 import design from "../../assets/animation/design.json"
+import signupLottie from "../../assets/animation/signupLottie.json"
 
 // Services
 import { signup } from "../../services/authService"
@@ -115,7 +116,7 @@ const SignUp = (props) => {
 
 			<div className="right-container">
 				<div className="lottie">
-					<Animation animData={design} animWidth={100} animHeight={100} />
+					<Animation animData={signupLottie} animWidth={100} animHeight={100} />
 				</div>
 			</div>
 		</div>
