@@ -115,7 +115,7 @@ const SignUp = (props) => {
 
 			<div className="right-container">
 				<div className="lottie">
-					<Animation animData={design} />
+					<Animation animData={design} animWidth={100} animHeight={100} />
 				</div>
 			</div>
 		</div>
