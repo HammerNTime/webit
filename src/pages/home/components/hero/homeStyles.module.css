@@ -75,8 +75,10 @@
     width: 100%;
     left: 0;
 }
-
-
+.tag_line {
+    font-size: 20px;
+    margin: -40px 0 30px 24px;
+}
 
 @media only screen and (min-width: 1920px) {
     .landing h2{
