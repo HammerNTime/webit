@@ -1,7 +1,8 @@
 import React from 'react'
 import tutorialStyles from "./tutorialStyles.module.css"
 import signup from "./images/signup.gif"
-import websiteColoring from "./images/codepen.gif"
+import websiteColoring from "./images/websiteColoring.gif"
+import codepen from "./images/codepenFinal.gif"
 
 function Tutorial() {
     return (
@@ -45,7 +46,7 @@ function Tutorial() {
                         </div>
         </div >
         <div className={`${tutorialStyles.right_side} ${tutorialStyles.right_image}`}>
-                        <img src={websiteColoring} alt="" width="550px" />
+                        <img src={codepen} alt="" width="550px" />
         </div>
     </section>
     </div>

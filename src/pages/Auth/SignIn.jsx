@@ -50,7 +50,7 @@ const SignIn = (props) => {
 						<h1>Login</h1>
 						{authError ? (
 							<h3>{authError}</h3>
-						) : (
+						) :	 (
 							<h3>Please enter your login information</h3>
 						)}
 					</div>
