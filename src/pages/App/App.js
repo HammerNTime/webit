@@ -12,6 +12,9 @@ import Nav from "../../components/Nav/Nav"
 import Main from "../../components/Main"
 import StyleModal from "../../components/styleModal"
 import pickerStyles from "../../components/pickerStyles.module.css"
+import { Snackbar } from "../../components/misc/snackbar/snackbar"
+import { useSnackbar } from "../../components/misc/snackbar/useSnackbar"
+
 
 //pages
 import Profile from "../profile/Profile"
@@ -36,6 +39,11 @@ function App() {
 	const [tool, setTool] = useState(-1)
 	const [targetId, setTargetId] = useState(-1)
 
+	const { isActive, message, openSnackBar } = useSnackbar()
+	const showSnackbarHandler = (text) => {
+		openSnackBar(text)
+	}
+
 
 	const handleSignupOrLogin = async () => {
 		const user = getUser()
@@ -52,6 +60,7 @@ function App() {
 	const saveTemplate = async (template) => {
 		if(!currentUser) return
 		try {
+			showSnackbarHandler("Template Saved")
 			createTemplate(template)
 		} catch (error) {
 			throw error
@@ -123,9 +132,12 @@ function App() {
 										backgrounds={backgrounds}
 										textColors={textColors}
 										targetId={targetId}
+										showSnackbarHandler={showSnackbarHandler}
 
 									/>
 								</div>
+								<Snackbar isActive={isActive} message={message} />
+
 							</>
 						</div>
 					}
@@ -215,8 +227,10 @@ function App() {
 										backgrounds={backgrounds}
 										textColors={textColors}
 										targetId={targetId}
+										showSnackbarHandler={showSnackbarHandler}
 									/>
 								</div>
+								<Snackbar isActive={isActive} message={message} />
 							</>
 						</div>
 					}
