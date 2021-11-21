@@ -9,23 +9,18 @@ import modalStyles from "./modalStyles.module.css"
 import Modal from "react-modal"
 // import styled from 'styled-components'
 
-function StyleModal({ backgrounds, textColors, targetId }) {
+function StyleModal({ backgrounds, textColors, targetId, showSnackbarHandler }) {
 	const [modalIsOpen, setModalIsOpen] = useState(false)
 	const [cssText, setCssText] = useState("")
   const [htmlText, setHtmlText] = useState("")
-	const { isActive, message, openSnackBar } = useSnackbar()
-	const _showSnackbarHandler = () => {
-		openSnackBar("Copied")
-	}
+
 	const copyCss = async () => {
-		_showSnackbarHandler()
+		showSnackbarHandler("CSS Copied")
 		await navigator.clipboard.writeText(cssText)
-		// alert("Text copied")
 	}
 	const copyHtml = async () => {
-		_showSnackbarHandler()
+		showSnackbarHandler("HTML Copied")
 		await navigator.clipboard.writeText(htmlText)
-		// alert("Text copied")
 	}
 	useEffect(() => {
 		setTimeout(() => {
@@ -447,7 +442,6 @@ function StyleModal({ backgrounds, textColors, targetId }) {
 					</div>
 				</div>
 			</Modal>
-			<Snackbar isActive={isActive} message={message} />
 		</div>
 	)
 }
