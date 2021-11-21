@@ -2,7 +2,7 @@ export const team = [
     {
         name: "Dylan Hammer",
         photo: "images/headshot.png",
-        title: "GOAT Backend Developer",
+        title: "Backend/Data Management Developer",
         bio:
           `<p>A fresh engineer out of General Assembly's Software Engineering Immersive Bootcamp. He has a passion for backend and data management. <br/><br/>While he may not have a traditional Software Engineering background, he does have 10+ years of real life and  professional work experience that has instilled in him an acute level of drive, dedication, and motivation. He works hard, learns fast, and is always eager to develop new skills.</p>`,
         social: {
