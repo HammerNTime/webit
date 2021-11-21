@@ -52,7 +52,7 @@ function ProfileCard({ name, bio, title, photo, socials }) {
                         <div onClick={ () => setModalIsOpen(false)}className={profileStyles.left_bar}> <i class="fas fa-arrow-left"></i>
         </div>
         <div className={profileStyles.info_container}>
-            <img src={photo} alt="" width="500px"/>
+            <img className={profileStyles.prof_img} src={photo} alt="" width="500px"/>
             <div className={profileStyles.modal_info}>
                                 <h3>{ name}</h3>
                                 <span>{title}</span>

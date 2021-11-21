@@ -38,7 +38,7 @@ const SignUp = (props) => {
 		try {
 			await signup(formData)
 			props.handleSignupOrLogin()
-			history("/")
+			history("/Design")
 		} catch (error) {
 			setAuthError(error.message)
 			setFormData({
