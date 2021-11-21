@@ -1,14 +1,14 @@
 export const team = [
     {
         name: "Dylan Hammer",
-        photo: "https://media1.popsugar-assets.com/files/thumbor/3V8qh1kIlOKjZCnfQq-2vhQbQnM/249x163:2149x2063/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2020/02/24/905/n/1922398/d9c250fc5e5435738e0e78.04534326_/i/Kanye-West.jpg",
+        photo: "images/headshot.png",
         title: "GOAT Backend Developer",
         bio:
-          "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
+          `<p>A fresh engineer out of General Assembly's Software Engineering Immersive Bootcamp. He has a passion for backend and data management. <br/><br/>While he may not have a traditional Software Engineering background, he does have 10+ years of real life and  professional work experience that has instilled in him an acute level of drive, dedication, and motivation. He works hard, learns fast, and is always eager to develop new skills.</p>`,
         social: {
           linkedin: "https://www.linkedin.com/in/dylanshammer/",
           github: "https://github.com/HammerNTime",
-          email: "mailto:you@youremail.com"
+          email: "hammer.dylan@gmail.com"
         }
     },
     {
