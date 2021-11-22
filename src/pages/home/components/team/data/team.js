@@ -13,10 +13,10 @@ export const team = [
     },
     {
         name: "Junior Adessu",
-        photo: "https://i.guim.co.uk/img/media/0b92b7f0c0dcc47a476412fbde80ddbd4d538c0f/0_4_3447_2069/master/3447.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=594f36d258a3a677719343f0d343d95c",
+        photo: "images/headshot2.jpg",
         title: "Developer",
         bio:
-          "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
+          "<p>A graphic designer turned Software Engineer, Junior is passionate about the web and contributing to it. While most excited about his front end skills, Junior does have the necessary back end skills to dive deep into the code.</p><p>Formerly in his Graphic Designer role, Junior' successes have stemmed from essential skills, including exceptional creativity, attention to details,  and an understanding of the latest trends in the tech environment. Through General Assembly's Engineering program, he has enhanced his problem-solving abilities and cultivated a reputation as a major contributor through innovation and management. </p>Junior is a collaborative team player who is always searching for opportunities to impart valuable insights. With these qualities, he is able to facilitate positive change and impacting outcomes.<p></p>",
         social: {
           linkedin: "https://www.linkedin.com/in/junioradessu/",
           github: "https://github.com/Jadessu",
