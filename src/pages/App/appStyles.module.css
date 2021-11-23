@@ -1,13 +1,12 @@
-.main__container{
-   max-width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    
+.main__container {
+	max-width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 }
 
-.pickerStyle__container{
-    max-width: 25vw;
-    align-items: center;
-    justify-content: center;
+.pickerStyle__container {
+	max-width: 25vw;
+	align-items: center;
+	justify-content: center;
 }

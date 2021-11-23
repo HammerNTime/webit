@@ -15,7 +15,6 @@ import pickerStyles from "../../components/pickerStyles.module.css"
 import { Snackbar } from "../../components/misc/snackbar/snackbar"
 import { useSnackbar } from "../../components/misc/snackbar/useSnackbar"
 
-
 //pages
 import Profile from "../profile/Profile"
 import Profiles from "../profiles/profiles"
@@ -44,7 +43,6 @@ function App() {
 		openSnackBar(text)
 	}
 
-
 	const handleSignupOrLogin = async () => {
 		const user = getUser()
 		setCurrentUser(user)
@@ -57,8 +55,9 @@ function App() {
 		setCurrentUser(null)
 		setAuthenticated(false)
 	}
+	
 	const saveTemplate = async (template) => {
-		if(!currentUser) return
+		if (!currentUser) return
 		try {
 			showSnackbarHandler("Template Saved")
 			createTemplate(template)
@@ -114,18 +113,19 @@ function App() {
 										}
 									/>
 									<div>
-									<TemplateButtons pickedColor={color}
-									backgrounds={backgrounds}
-									setBackgrounds={setBackgrounds}
-									textColors={textColors}
-									setTextColors={setTextColors}
-									currentUser={currentUser}
-									saveTemplate={saveTemplate}
-									currentTemplate={currentTemplate}
-									setCurrentTemplate={setCurrentTemplate}
-									tool={tool}
-									setTool={setTool}
-									 />
+										<TemplateButtons
+											pickedColor={color}
+											backgrounds={backgrounds}
+											setBackgrounds={setBackgrounds}
+											textColors={textColors}
+											setTextColors={setTextColors}
+											currentUser={currentUser}
+											saveTemplate={saveTemplate}
+											currentTemplate={currentTemplate}
+											setCurrentTemplate={setCurrentTemplate}
+											tool={tool}
+											setTool={setTool}
+										/>
 									</div>
 									<StyleModal
 										pickedColor={color}
@@ -133,11 +133,9 @@ function App() {
 										textColors={textColors}
 										targetId={targetId}
 										showSnackbarHandler={showSnackbarHandler}
-
 									/>
 								</div>
 								<Snackbar isActive={isActive} message={message} />
-
 							</>
 						</div>
 					}
@@ -147,11 +145,7 @@ function App() {
 					path="/signin"
 					element={<SignIn handleSignupOrLogin={handleSignupOrLogin} />}
 				/>
-						<Route
-					exact
-					path="/"
-					element={ <Landing/>}
-				/>
+				<Route exact path="/" element={<Landing />} />
 				<Route
 					exact
 					path="/signup"
@@ -209,18 +203,19 @@ function App() {
 										}
 									/>
 									<div>
-									<TemplateButtons pickedColor={color}
-									backgrounds={backgrounds}
-									setBackgrounds={setBackgrounds}
-									textColors={textColors}
-									setTextColors={setTextColors}
-									currentUser={currentUser}
-									saveTemplate={saveTemplate}
-									currentTemplate={currentTemplate}
-									setCurrentTemplate={setCurrentTemplate}
-									tool={tool}
-									setTool={setTool}
-									 />
+										<TemplateButtons
+											pickedColor={color}
+											backgrounds={backgrounds}
+											setBackgrounds={setBackgrounds}
+											textColors={textColors}
+											setTextColors={setTextColors}
+											currentUser={currentUser}
+											saveTemplate={saveTemplate}
+											currentTemplate={currentTemplate}
+											setCurrentTemplate={setCurrentTemplate}
+											tool={tool}
+											setTool={setTool}
+										/>
 									</div>
 									<StyleModal
 										pickedColor={color}
