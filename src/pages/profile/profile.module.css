@@ -129,9 +129,9 @@ h4 {
 	margin: 0 1rem;
 }
 .user__posts {
-    max-height: 80vh;
-    overflow-y: scroll;
-    overflow: -moz-scrollbars-none;
+	max-height: 80vh;
+	overflow-y: scroll;
+	overflow: -moz-scrollbars-none;
 	scrollbar-width: none;
 	/* this will hide the scrollbar in internet explorers */
 	-ms-overflow-style: none;
@@ -141,9 +141,8 @@ h4 {
 	display: none;
 }
 .user__posts:first-child {
-    margin-top: 10px;
+	margin-top: 10px;
 }
-
 
 @media only screen and (max-width: 850px) {
 	.profile-page {

@@ -55,7 +55,7 @@ function App() {
 		setCurrentUser(null)
 		setAuthenticated(false)
 	}
-	
+
 	const saveTemplate = async (template) => {
 		if (!currentUser) return
 		try {

@@ -78,7 +78,7 @@ function Profile({ currentUser, handleLogout, setCurrentUser }) {
 					</div>
 				</>
 			) : (
-				<LoadingAnimation loadingData={loadingData}/>
+				<LoadingAnimation loadingData={loadingData} />
 			)}
 		</div>
 	)

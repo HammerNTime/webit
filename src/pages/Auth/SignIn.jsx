@@ -6,7 +6,6 @@ import "./Auth.css"
 import design from "../../assets/animation/design.json"
 import signupLottie from "../../assets/animation/signupLottie.json"
 
-
 // Services
 import { login } from "../../services/authService" // update import
 
@@ -50,7 +49,7 @@ const SignIn = (props) => {
 						<h1>Login</h1>
 						{authError ? (
 							<h3>{authError}</h3>
-						) :	 (
+						) : (
 							<h3>Please enter your login information</h3>
 						)}
 					</div>

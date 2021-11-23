@@ -1,142 +1,141 @@
-:root{
-    --text: #D8D7D2;
-    --title-text: #D8D7D2;
-    --yellow: #FEBB40;
-    --orange: #DB5A28;
-    --red: #BE621B;
-    /* --background: url(./layered-waves-haikei\ \(2\).svg) ; */
-    --summary-text: #5b5b88;
-    /* --logo: url(./logo.png); */
-    --black : #201251;
-    --nav-color: #12121B;
-    --white: white;
-    
-   
+:root {
+	--text: #d8d7d2;
+	--title-text: #d8d7d2;
+	--yellow: #febb40;
+	--orange: #db5a28;
+	--red: #be621b;
+	/* --background: url(./layered-waves-haikei\ \(2\).svg) ; */
+	--summary-text: #5b5b88;
+	/* --logo: url(./logo.png); */
+	--black: #201251;
+	--nav-color: #12121b;
+	--white: white;
 }
 
-.signup-page{
-    display: flex;
-    height: 94vh;
+.signup-page {
+	display: flex;
+	height: 94vh;
 }
 
-.signup-page h1, .signup-page h3{
-    color: var(--black);
+.signup-page h1,
+.signup-page h3 {
+	color: var(--black);
 }
-.left-container{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-right: 1px solid var(--white);
-    background: var(--white);
-}
-
-.right-container{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--white);
+.left-container {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-right: 1px solid var(--white);
+	background: var(--white);
 }
 
-.right-container .lottie{
-    width: 90%
+.right-container {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--white);
 }
 
-.title-container{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: flex-start;
+.right-container .lottie {
+	width: 90%;
+}
+
+.title-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: flex-start;
 }
 
 .title-container h3 {
-    opacity: .5;
-    margin: 14px 0px 32px 0px;
-    font-weight: 600;
+	opacity: 0.5;
+	margin: 14px 0px 32px 0px;
+	font-weight: 600;
 }
 
-.avatar-container{
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
+.avatar-container {
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
 }
 
 .form-container {
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 450px    
+	width: 65%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 450px;
 }
 
 .register-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 }
 
-.form-container input, .form-container select, .form-container button {
-    padding: 16px;
-    font-size: 16px;
-    margin-bottom: 16px;
-    color: rgb(200, 200, 200);
+.form-container input,
+.form-container select,
+.form-container button {
+	padding: 16px;
+	font-size: 16px;
+	margin-bottom: 16px;
+	color: rgb(200, 200, 200);
 }
 
 .form-container input {
-    border: 1px solid #292934;
-    border-radius: 7px;
-    background: var(--black);
+	border: 1px solid #292934;
+	border-radius: 7px;
+	background: var(--black);
 }
 
 #avatar-button {
-    border: 1px solid #292934;
-    border-radius: 7px;
-    background: var(--black);
-    color: #757575;
-    text-align: left;
+	border: 1px solid #292934;
+	border-radius: 7px;
+	background: var(--black);
+	color: #757575;
+	text-align: left;
 }
 
-#submit-button{
-    margin-top: 22px;
-    background: var(--orange);
-    border: none;
-    color: white;
-    font-weight: 600;
-    border-radius: 7px;
+#submit-button {
+	margin-top: 22px;
+	background: var(--orange);
+	border: none;
+	color: white;
+	font-weight: 600;
+	border-radius: 7px;
 }
 
-.redirect-container{
-    display: flex;
-    font-size: 14px;
-    font-weight: 500;
-    opacity: .5;
-    color: var(--black);
+.redirect-container {
+	display: flex;
+	font-size: 14px;
+	font-weight: 500;
+	opacity: 0.5;
+	color: var(--black);
 }
 
-.redirect-link{
-    color: #7450E9;
-    text-decoration: none;
-    padding-left: 6px;
+.redirect-link {
+	color: #7450e9;
+	text-decoration: none;
+	padding-left: 6px;
 }
-
 
 @media only screen and (max-width: 900px) {
-    .signup-page{
-        flex-direction: column;
-        width: 100vw;
-    }
+	.signup-page {
+		flex-direction: column;
+		width: 100vw;
+	}
 
-    .left-container{
-        width: 100%;
-        height: 100vh;
-    }
-    .right-container{
-        display: none;
-    }
+	.left-container {
+		width: 100%;
+		height: 100vh;
+	}
+	.right-container {
+		display: none;
+	}
 
-    .form-container {
-        width: 75%;
-
-    }
-  }
+	.form-container {
+		width: 75%;
+	}
+}

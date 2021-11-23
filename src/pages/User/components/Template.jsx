@@ -22,7 +22,7 @@ function Template({
 	let bg3 = template.backgroundColors[3]
 	let bg4 = template.backgroundColors[8]
 	let bg5 = template.backgroundColors[11]
-	
+
 	const handleDeleteTemplate = async () => {
 		try {
 			const deletedTemplate = await deleteTemplate(id, userId)
@@ -138,34 +138,49 @@ function Template({
 
 				<div className={profileStyles.template__palette}>
 					<div
-						style={{ backgroundColor: bg1, color: `${invertColor(bg1.slice(0,7))}` }}
+						style={{
+							backgroundColor: bg1,
+							color: `${invertColor(bg1.slice(0, 7))}`,
+						}}
 						className={profileStyles.template__color}
 					>
-						<p>{bg1.slice(0,6)}</p>
+						<p>{bg1.slice(0, 6)}</p>
 					</div>
 					<div
-						style={{ backgroundColor: bg2, color: `${invertColor(bg2.slice(0,7))}` }}
+						style={{
+							backgroundColor: bg2,
+							color: `${invertColor(bg2.slice(0, 7))}`,
+						}}
 						className={profileStyles.template__color}
 					>
-						<p>{bg2.slice(0,6)}</p>
+						<p>{bg2.slice(0, 6)}</p>
 					</div>
 					<div
-						style={{ backgroundColor: bg3, color: `${invertColor(bg3.slice(0,7))}` }}
+						style={{
+							backgroundColor: bg3,
+							color: `${invertColor(bg3.slice(0, 7))}`,
+						}}
 						className={profileStyles.template__color}
 					>
-						<p>{bg3.slice(0,6)}</p>
+						<p>{bg3.slice(0, 6)}</p>
 					</div>
 					<div
-						style={{ backgroundColor: bg4, color: `${invertColor(bg4.slice(0,7))}` }}
+						style={{
+							backgroundColor: bg4,
+							color: `${invertColor(bg4.slice(0, 7))}`,
+						}}
 						className={profileStyles.template__color}
 					>
-						<p>{bg4.slice(0,6)}</p>
+						<p>{bg4.slice(0, 6)}</p>
 					</div>
 					<div
-						style={{ backgroundColor: bg5, color: `${invertColor(bg5.slice(0,7))}` }}
+						style={{
+							backgroundColor: bg5,
+							color: `${invertColor(bg5.slice(0, 7))}`,
+						}}
 						className={profileStyles.template__color}
 					>
-						<p>{bg5.slice(0,6)}</p>
+						<p>{bg5.slice(0, 6)}</p>
 					</div>
 				</div>
 			</div>
