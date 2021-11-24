@@ -37,12 +37,6 @@ app.get("/*", (req, res) => {
 		)
 	)
 })
-// app.get("*", function (req, res) {
-// 	console.log("This is the path console log", path.join(path.dirname(fileURLToPath(import.meta.url)), "build", "index.html"))
-// 	res.sendFile(
-// 		path.join(path.dirname(fileURLToPath(import.meta.url)), "build", "index.html")
-// 	)
-// })
 
 
 const port = process.env.PORT || 3001

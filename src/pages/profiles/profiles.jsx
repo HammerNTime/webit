@@ -10,7 +10,6 @@ function Profiles({ currentUser }) {
 		const fetchUsers = async () => {
 			try {
 				const users = await getAllUsers()
-				console.log("these are the users", users)
 				setUserList(users)
 			} catch (error) {
 				throw error
@@ -20,7 +19,6 @@ function Profiles({ currentUser }) {
 		// return () => { setUserList([]) }
 	}, [])
 
-	console.log("this is userList", userList)
 	return (
 		<section className={userStyles.wrapper}>
 			<div className={userStyles.row}>

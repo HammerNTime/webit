@@ -7,7 +7,6 @@ Modal.setAppElement("#root");
 function ProfileCard({ name, bio, title, photo, socials }) {
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    console.log("this is socials", socials.facebook)
 
     return (
         <div>

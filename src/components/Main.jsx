@@ -21,7 +21,6 @@ function Main({
 	const params = useParams()
 	const getTemplate = async () => {
 		let template = await getTemplateById(params?.id)
-		console.log(template)
 		setCurrentTemplate(template)
 	}
 	useEffect(() => {
@@ -109,13 +108,10 @@ function Main({
 	}, [currentTemplate])
 	function changeColor(pickedColor, e) {
 		setTargetId(targetId * -1)
-		console.log(e.target.id)
 		if (e.target.id === "100" || e.target.id === "28") {
 			return
 		} else {
-			console.log(e.target.style)
 			if (tool === -1) {
-				console.log(backgrounds)
 				if (e.target.id === "12") {
 					document.getElementById("11").style.backgroundColor = pickedColor
 					backgrounds["11"] = pickedColor

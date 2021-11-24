@@ -24,8 +24,6 @@ function Profile({ currentUser, handleLogout, setCurrentUser }) {
 		}
 	}, [currentUser])
 
-	console.log(user?.templates, "current user")
-	console.log("i am templates", templates)
 
 	return (
 		<div className={profileStyles.profile__page}>

@@ -26,7 +26,6 @@ function Template({
 	const handleDeleteTemplate = async () => {
 		try {
 			const deletedTemplate = await deleteTemplate(id, userId)
-			console.log(deletedTemplate)
 			setModalIsOpen(false)
 			window.location.reload(false)
 		} catch (error) {

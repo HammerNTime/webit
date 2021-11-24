@@ -2,7 +2,6 @@ import { User } from "../models/user.js"
 import { Template } from "../models/template.js"
 
 const create = async (req, res) => {
-	console.log(req.body.added_by)
 	const template = await new Template(req.body)
 	try {
 		await template.save()
@@ -43,8 +42,9 @@ const getTemplatesByUserId = async (req, res) => {
 
 const deleteTemplate = async (req, res) => {
 	try {
-		const removedTemplate = await Template.findByIdAndDelete(req.params.templateId)
-    console.log(req.params)
+		const removedTemplate = await Template.findByIdAndDelete(
+			req.params.templateId
+		)
 		const user = await User.findById(req.params.userId)
 		user.templates.remove({ _id: req.params.templateId })
 		await user.save()

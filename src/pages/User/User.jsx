@@ -7,17 +7,12 @@ import profileStyles from ".././profile/profile.module.css"
 import { getProfileById } from "../../services/profileService"
 
 function User(props, { currentUser }) {
-	// console.log("props", props)
-	// const { id } = props.match.params
 	const params = useParams()
-	// console.log("this is id", i.id)
 
 	const navigate = useNavigate()
 
 	const [userData, setUserData] = useState()
 	const [templatesArray, setTemplatesArray] = useState()
-	// const [backgroundColors, setBackgroundColors] = useState()
-	// const [ textColors, setTextColors] = useState()
 
 	useEffect(() => {
 		const fetchUser = async () => {
